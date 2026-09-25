@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EasyGrade — Professional Color Grading for DaVinci Resolve</title>
+<title>EasyGrade | Professional Color Grading for DaVinci Resolve</title>
 <style>
-:root{--paper:#eee7da;--ink:#171713;--muted:#6d695f;--rule:#2b2a26;--accent:#9a2f24;--max:1180px}
+:root{--paper:#eee7da;--ink:#171713;--muted:#675f55;--rule:#2b2a26;--accent:#9a2f24;--max:1180px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}a{color:inherit}button{font:inherit}
 .top{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;gap:20px;padding:0 24px;border-bottom:1px solid var(--rule);background:rgba(238,231,218,.93);backdrop-filter:blur(8px)}
 .logo{font:700 20px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.04em}.top>div:first-child{display:flex;align-items:center}.menu{margin-left:auto}.sign{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 .mast{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;max-width:var(--max);margin:auto;padding:12vh 28px 10vh;border-bottom:1px solid var(--rule)}
-.kicker{font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase}.mast h1{font-size:clamp(64px,9vw,132px);line-height:.83;letter-spacing:-.07em;font-weight:400;margin:18px 0 22px;max-width:760px}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.42;max-width:620px}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:16px;font-size:14px;line-height:1.55;color:var(--muted)}
+.kicker{font:700 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}.mast h1{font-size:clamp(64px,9vw,132px);line-height:.83;letter-spacing:-.07em;font-weight:400;margin:18px 0 22px;max-width:760px}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.42;max-width:620px}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:16px;font-size:14px;line-height:1.55;color:var(--muted)}
 .cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}.hover-preview{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .18s ease;filter:saturate(.9) contrast(1.03)}.cover.is-hover-previewing .hover-preview{opacity:1}.cover.is-hover-previewing .film-play{opacity:0}.film-play{transition:opacity .16s ease}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.28),transparent 58%)}.film-play{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:13px 16px;cursor:pointer;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;text-transform:uppercase}.film-play .tri{font-size:17px;line-height:1}.film-time{position:absolute;z-index:3;right:16px;bottom:14px;background:var(--paper);border:1px solid var(--ink);padding:7px 9px;font:700 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}.cover .stamp{position:absolute;right:18px;bottom:18px;background:var(--paper);padding:9px 11px;border:1px solid var(--ink);font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
-.chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:160px 1fr 1fr;gap:34px}.num{font:italic 50px/1 Georgia,serif;color:var(--accent)}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.93;font-weight:400;letter-spacing:-.05em;margin:0 0 22px}.chapter p{font-size:19px;line-height:1.58;color:#3c3932}.annotation{font:600 11px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;border-left:1px solid var(--rule);padding-left:18px;color:var(--muted)}
-.collage{max-width:var(--max);margin:auto;padding:11vh 28px 14vh;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:end}.main-img,.small-img{position:relative;overflow:hidden;background:#ddd}.main-img{min-height:68svh}.small-img{min-height:40svh;margin-bottom:12vh}.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.caption{font:600 10px/1.45 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;margin-top:9px}
+.chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:160px 1fr 1fr;gap:34px}.num{font:italic 50px/1 Georgia,serif;color:var(--accent)}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.93;font-weight:400;letter-spacing:-.05em;margin:0 0 22px}.chapter p{font-size:19px;line-height:1.58;color:#3c3932;max-width:34ch}.annotation{border-left:1px solid var(--rule);padding-left:18px;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.annotation-label{display:block;margin-bottom:10px;font:700 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.1em}.annotation-body{margin:0!important;max-width:38ch!important;font:400 15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;letter-spacing:0;text-transform:none;color:var(--muted)!important}
+.collage{max-width:var(--max);margin:auto;padding:11vh 28px 14vh;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:end}.main-img,.small-img{position:relative;overflow:hidden;background:#ddd}.main-img{min-height:68svh}.small-img{min-height:40svh;margin-bottom:12vh}.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.caption{font:600 11px/1.45 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.07em;margin-top:9px}
 .proof{background:#1a1a17;color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.9;letter-spacing:-.06em;margin:0}.proof .copy{font-size:20px;line-height:1.55;color:#d2ccbf}.list{margin-top:40px;border-top:1px solid #716e66}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid #716e66}.item span:first-child{font:600 10px/1.4 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#aaa59a}
 .price{padding:14vh 28px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}.price h2{font-size:clamp(58px,8vw,118px);font-weight:400;line-height:.87;letter-spacing:-.065em;margin:0}.price p{font-size:18px;line-height:1.55;max-width:560px}.price-tag{font-size:clamp(76px,10vw,150px);line-height:.8;letter-spacing:-.08em}.note{font:600 10px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:20px}
 footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font:600 10px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em}
 .modal,.video-modal{position:fixed;inset:0;z-index:40;background:rgba(20,19,17,.72);display:none;place-items:center;padding:20px}.modal.open,.video-modal.open{display:grid}.dialog{max-width:520px;width:100%;background:var(--paper);border:1px solid var(--ink);padding:30px}.dialog h3{font-size:42px;font-weight:400;letter-spacing:-.04em;margin:12px 0}.dialog p{line-height:1.6}.close{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;font:700 12px/1 sans-serif}.video-frame{position:relative;width:min(1080px,94vw);background:#111;border:1px solid var(--ink)}.video-frame video{display:block;width:100%;max-height:78vh;background:#000}.video-close{position:absolute;z-index:4;right:12px;top:12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:9px 11px;cursor:pointer;font:700 10px/1 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em}.video-note{background:var(--paper);color:var(--muted);border-top:1px solid var(--ink);padding:10px 12px;font:700 10px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em}
-@media(max-width:760px){.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:58px minmax(0,1fr);padding:88px 16px;gap:18px}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:2}.num{font-size:34px}.collage{grid-template-columns:1fr;padding:82px 16px 96px}.small-img{min-height:45svh;margin:0}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.price{grid-template-columns:1fr;padding:96px 16px}.price-tag{font-size:76px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
+@media(min-width:761px) and (max-width:1024px){.chapter{grid-template-columns:84px minmax(0,1fr);gap:24px;padding:10vh 28px}.chapter .annotation{grid-column:2;max-width:56ch}.chapter h2{max-width:12ch}.chapter p{max-width:42ch}.num{font-size:42px}.proof-inner{gap:5vw}}
+@media(max-width:760px){.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:58px minmax(0,1fr);padding:88px 16px;gap:18px}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:2}.chapter p{max-width:34ch}.annotation-body{font-size:15px!important;line-height:1.62!important}.num{font-size:34px}.collage{grid-template-columns:1fr;padding:82px 16px 96px}.small-img{min-height:45svh;margin:0}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.price{grid-template-columns:1fr;padding:96px 16px}.price-tag{font-size:76px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -32,7 +33,7 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
   <div>
     <div class="kicker">Professional color grading for DaVinci Resolve</div>
     <h1>Grade less.<br>Create more.</h1>
-    <p class="dek">Skin, foliage, skies and more in one focused OFX — an approach for spending less time building the setup and more time shaping the image.</p>
+    <p class="dek">Skin, foliage, skies and more in one focused OFX, so you can spend less time building the setup and more time shaping the image.</p>
   </div>
   <aside class="aside">EasyGrade is planned for macOS on Apple silicon. The 14-day trial begins only on first activation in DaVinci Resolve. One-time purchase: $149.</aside>
 </section>
@@ -47,7 +48,7 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
 <section class="chapter" id="portrait">
   <div class="num">I</div>
   <div><div class="kicker">Portrait / Skin</div><h2>Skin, without the fight.</h2><p>Shape natural-looking skin without turning every adjustment into a qualifier-building exercise.</p></div>
-  <div class="annotation">Portrait controls<br><br>Bring common skin adjustments into one focused place so you can stay on the image instead of building the setup.</div>
+  <aside class="annotation"><span class="annotation-label">Portrait controls</span><p class="annotation-body">Bring common skin adjustments into one focused place so you can stay on the image instead of building the setup.</p></aside>
 </section>
 
 <section class="collage" aria-label="EasyGrade grading study">
@@ -64,7 +65,7 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
 <section class="chapter">
   <div class="num">II</div>
   <div><div class="kicker">Environment / Foliage + Sky</div><h2>Shape the environment.</h2><p>Guide greens, sky and atmosphere toward the mood you want while keeping the frame coherent.</p></div>
-  <div class="annotation">Environment controls<br><br>Shape greens, sky and atmosphere while keeping the frame coherent.</div>
+  <aside class="annotation"><span class="annotation-label">Environment controls</span><p class="annotation-body">Shape greens, sky and atmosphere while keeping the frame coherent.</p></aside>
 </section>
 
 <section class="proof" id="system">
@@ -89,10 +90,10 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
 <footer><span>EasyGrade</span><span>Professional color grading for DaVinci Resolve</span></footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="trial-title">
-  <div class="dialog"><div class="kicker">14-day trial</div><h3 id="trial-title">Start your EasyGrade trial.</h3><p>Your 14-day trial begins only when EasyGrade is activated for the first time in DaVinci Resolve.</p><button class="close" data-close>Close</button></div>
+  <div class="dialog" tabindex="-1"><div class="kicker">14-day trial</div><h3 id="trial-title">Start your EasyGrade trial.</h3><p>Your 14-day trial begins only when EasyGrade is activated for the first time in DaVinci Resolve.</p><button class="close" data-close>Close</button></div>
 </div>
 <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="EasyGrade video preview">
-  <div class="video-frame">
+  <div class="video-frame" tabindex="-1">
     <button class="video-close" type="button" data-video-close aria-label="Close video preview">Close</button>
     <video id="previewVideo" controls playsinline preload="metadata" poster="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200"><source src="../assets/easygrade-preview.mp4" type="video/mp4"></video>
     <div class="video-note">Sample footage · video preview</div>
@@ -130,16 +131,61 @@ document.querySelectorAll('[data-video-card]').forEach(card=>{
 const modal=document.getElementById('modal');
 const videoModal=document.getElementById('videoModal');
 const previewVideo=document.getElementById('previewVideo');
+const FOCUSABLE='button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+let trialOpener=null;
 let videoOpener=null;
-const openVideo=e=>{videoOpener=e.currentTarget;videoOpener.closest('[data-video-card]')?._stopHoverPreview?.();videoModal.classList.add('open');previewVideo.play().catch(()=>{});};
-const closeVideo=()=>{videoModal.classList.remove('open');previewVideo.pause();if(videoOpener)videoOpener.focus();};
+
+const focusDialog=container=>requestAnimationFrame(()=>container.querySelector('[tabindex="-1"]')?.focus());
+const trapFocus=(container,e)=>{
+  const items=[...container.querySelectorAll(FOCUSABLE)].filter(el=>el.offsetParent!==null);
+  if(!items.length){e.preventDefault();return;}
+  const first=items[0],last=items[items.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+};
+
+const openTrial=e=>{
+  trialOpener=e.currentTarget;
+  modal.classList.add('open');
+  focusDialog(modal);
+};
+const closeTrial=()=>{
+  if(!modal.classList.contains('open'))return;
+  modal.classList.remove('open');
+  trialOpener?.focus();
+};
+
+const openVideo=e=>{
+  videoOpener=e.currentTarget;
+  videoOpener.closest('[data-video-card]')?._stopHoverPreview?.();
+  videoModal.classList.add('open');
+  focusDialog(videoModal);
+  previewVideo.play().catch(()=>{});
+};
+const closeVideo=()=>{
+  if(!videoModal.classList.contains('open'))return;
+  videoModal.classList.remove('open');
+  previewVideo.pause();
+  videoOpener?.focus();
+};
+
 document.querySelectorAll('[data-video]').forEach(b=>b.addEventListener('click',openVideo));
 document.querySelectorAll('[data-video-close]').forEach(b=>b.addEventListener('click',closeVideo));
 videoModal.addEventListener('click',e=>{if(e.target===videoModal)closeVideo()});
-document.querySelectorAll('[data-trial]').forEach(b=>b.addEventListener('click',()=>modal.classList.add('open')));
-document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>modal.classList.remove('open')));
-modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');if(videoModal.classList.contains('open'))closeVideo();}});
+document.querySelectorAll('[data-trial]').forEach(b=>b.addEventListener('click',openTrial));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeTrial));
+modal.addEventListener('click',e=>{if(e.target===modal)closeTrial()});
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(videoModal.classList.contains('open'))closeVideo();
+    else if(modal.classList.contains('open'))closeTrial();
+    return;
+  }
+  if(e.key==='Tab'){
+    if(videoModal.classList.contains('open'))trapFocus(videoModal,e);
+    else if(modal.classList.contains('open'))trapFocus(modal,e);
+  }
+});
 </script>
 </body>
 </html>

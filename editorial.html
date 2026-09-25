@@ -11,7 +11,7 @@
 .logo{font:700 20px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.04em}.top>div:first-child{display:flex;align-items:center}.menu{margin-left:auto}.sign{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 .mast{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;max-width:var(--max);margin:auto;padding:12vh 28px 10vh;border-bottom:1px solid var(--rule)}
 .kicker{font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase}.mast h1{font-size:clamp(64px,9vw,132px);line-height:.83;letter-spacing:-.07em;font-weight:400;margin:18px 0 22px;max-width:760px}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.42;max-width:620px}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:16px;font-size:14px;line-height:1.55;color:var(--muted)}
-.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.28),transparent 58%)}.film-play{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:13px 16px;cursor:pointer;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;text-transform:uppercase}.film-play .tri{font-size:17px;line-height:1}.film-time{position:absolute;z-index:3;right:16px;bottom:14px;background:var(--paper);border:1px solid var(--ink);padding:7px 9px;font:700 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}.cover .stamp{position:absolute;right:18px;bottom:18px;background:var(--paper);padding:9px 11px;border:1px solid var(--ink);font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
+.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}.hover-preview{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .18s ease;filter:saturate(.9) contrast(1.03)}.cover.is-hover-previewing .hover-preview{opacity:1}.cover.is-hover-previewing .film-play{opacity:0}.film-play{transition:opacity .16s ease}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.28),transparent 58%)}.film-play{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:13px 16px;cursor:pointer;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;text-transform:uppercase}.film-play .tri{font-size:17px;line-height:1}.film-time{position:absolute;z-index:3;right:16px;bottom:14px;background:var(--paper);border:1px solid var(--ink);padding:7px 9px;font:700 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}.cover .stamp{position:absolute;right:18px;bottom:18px;background:var(--paper);padding:9px 11px;border:1px solid var(--ink);font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
 .chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:160px 1fr 1fr;gap:34px}.num{font:italic 50px/1 Georgia,serif;color:var(--accent)}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.93;font-weight:400;letter-spacing:-.05em;margin:0 0 22px}.chapter p{font-size:19px;line-height:1.58;color:#3c3932}.annotation{font:600 11px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;border-left:1px solid var(--rule);padding-left:18px;color:var(--muted)}
 .collage{max-width:var(--max);margin:auto;padding:11vh 28px 14vh;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:end}.main-img,.small-img{position:relative;overflow:hidden;background:#ddd}.main-img{min-height:68svh}.small-img{min-height:40svh;margin-bottom:12vh}.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.caption{font:600 10px/1.45 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;margin-top:9px}
 .proof{background:#1a1a17;color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.9;letter-spacing:-.06em;margin:0}.proof .copy{font-size:20px;line-height:1.55;color:#d2ccbf}.list{margin-top:40px;border-top:1px solid #716e66}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid #716e66}.item span:first-child{font:600 10px/1.4 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#aaa59a}
@@ -37,8 +37,9 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
   <aside class="aside">EasyGrade is planned for macOS on Apple silicon. The 14-day trial begins only on first activation in DaVinci Resolve. One-time purchase: $149.</aside>
 </section>
 
-<figure class="cover">
+<figure class="cover" data-video-card>
   <img src="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="EasyGrade video preview thumbnail">
+  <video class="hover-preview" muted loop playsinline preload="none" aria-hidden="true" data-src="assets/easygrade-preview.mp4"></video>
   <button class="film-play" type="button" data-video aria-label="Play EasyGrade video preview"><span class="tri" aria-hidden="true">▶</span><span>Watch film</span></button>
   <span class="film-time">0:05</span>
 </figure>
@@ -98,11 +99,39 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
   </div>
 </div>
 <script>
+
+const DESKTOP_HOVER_PREVIEW=window.matchMedia('(min-width:1025px) and (hover:hover) and (pointer:fine)');
+document.querySelectorAll('[data-video-card]').forEach(card=>{
+  const hoverVideo=card.querySelector('.hover-preview');
+  if(!hoverVideo)return;
+  let hoverTimer=null;
+  const stopHoverPreview=()=>{
+    clearTimeout(hoverTimer);
+    card.classList.remove('is-hover-previewing');
+    hoverVideo.pause();
+    try{hoverVideo.currentTime=0}catch(_e){}
+  };
+  const startHoverPreview=()=>{
+    if(!DESKTOP_HOVER_PREVIEW.matches)return;
+    clearTimeout(hoverTimer);
+    hoverTimer=setTimeout(()=>{
+      if(!DESKTOP_HOVER_PREVIEW.matches)return;
+      if(!hoverVideo.src){hoverVideo.src=hoverVideo.dataset.src;hoverVideo.load();}
+      card.classList.add('is-hover-previewing');
+      hoverVideo.play().catch(()=>{});
+    },220);
+  };
+  card.addEventListener('mouseenter',startHoverPreview);
+  card.addEventListener('mouseleave',stopHoverPreview);
+  DESKTOP_HOVER_PREVIEW.addEventListener?.('change',e=>{if(!e.matches)stopHoverPreview();});
+  card._stopHoverPreview=stopHoverPreview;
+});
+
 const modal=document.getElementById('modal');
 const videoModal=document.getElementById('videoModal');
 const previewVideo=document.getElementById('previewVideo');
 let videoOpener=null;
-const openVideo=e=>{videoOpener=e.currentTarget;videoModal.classList.add('open');previewVideo.play().catch(()=>{});};
+const openVideo=e=>{videoOpener=e.currentTarget;videoOpener.closest('[data-video-card]')?._stopHoverPreview?.();videoModal.classList.add('open');previewVideo.play().catch(()=>{});};
 const closeVideo=()=>{videoModal.classList.remove('open');previewVideo.pause();if(videoOpener)videoOpener.focus();};
 document.querySelectorAll('[data-video]').forEach(b=>b.addEventListener('click',openVideo));
 document.querySelectorAll('[data-video-close]').forEach(b=>b.addEventListener('click',closeVideo));

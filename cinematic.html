@@ -15,12 +15,12 @@
 .chapter{min-height:92svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:6vw;padding:12vh 6vw;border-top:1px solid rgba(255,255,255,.06)}
 .chapter:nth-of-type(even){background:#eceee9;color:#141716}.chapter:nth-of-type(even) .chapter-copy p,.chapter:nth-of-type(even) .meta{color:#5d6661}
 .chapter-copy{max-width:540px}.chapter h2{font-size:clamp(46px,6vw,92px);line-height:.94;letter-spacing:-.055em;margin:8px 0 24px}.chapter p{font-size:20px;line-height:1.55;color:var(--muted)}.meta{font:600 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#a5aaa7}
-.media{position:relative;min-height:64svh;overflow:hidden;border-radius:28px;background:#1b1d1d}.media img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.media .after{clip-path:inset(0 0 0 var(--split,52%));filter:saturate(1.14) contrast(1.05) hue-rotate(-4deg)}.compare-line{position:absolute;top:0;bottom:0;left:var(--split,52%);width:1px;background:white;box-shadow:0 0 0 1px rgba(0,0,0,.2)}.compare-knob{position:absolute;left:var(--split,52%);top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:white;color:#111;display:grid;place-items:center;font-weight:800}.range{position:absolute;inset:auto 7% 24px;width:86%;z-index:3;accent-color:white}.lab{position:absolute;z-index:4;top:18px;padding:7px 10px;background:rgba(0,0,0,.68);color:#fff;border-radius:999px;font-size:11px;font-weight:650;line-height:1}.lab.l{left:18px}.lab.r{right:18px}
+.video-story{padding:10vh 6vw 4vh}.video-thumb{position:relative;max-width:var(--max);min-height:68svh;margin:auto;overflow:hidden;border-radius:32px;background:#151718}.video-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.video-thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.08) 55%)}.video-launch{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;gap:12px;border:0;background:transparent;color:#fff;cursor:pointer;text-align:center}.video-launch .play{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.94);color:#111;font-size:25px;padding-left:4px;box-shadow:0 12px 40px rgba(0,0,0,.28)}.video-launch .play-label{font-size:12px;font-weight:720;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 1px 18px rgba(0,0,0,.6)}.video-badge{position:absolute;z-index:3;right:20px;bottom:18px;padding:8px 10px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font:650 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}.media{position:relative;min-height:64svh;overflow:hidden;border-radius:28px;background:#1b1d1d}.media img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.media .after{clip-path:inset(0 0 0 var(--split,52%));filter:saturate(1.14) contrast(1.05) hue-rotate(-4deg)}.compare-line{position:absolute;top:0;bottom:0;left:var(--split,52%);width:1px;background:white;box-shadow:0 0 0 1px rgba(0,0,0,.2)}.compare-knob{position:absolute;left:var(--split,52%);top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:white;color:#111;display:grid;place-items:center;font-weight:800}.range{position:absolute;inset:auto 7% 24px;width:86%;z-index:3;accent-color:white}.lab{position:absolute;z-index:4;top:18px;padding:7px 10px;background:rgba(0,0,0,.68);color:#fff;border-radius:999px;font-size:11px;font-weight:650;line-height:1}.lab.l{left:18px}.lab.r{right:18px}
 .proof{padding:15vh 6vw 13vh;max-width:var(--max);margin:auto}.proof h2{font-size:clamp(52px,7vw,104px);line-height:.92;letter-spacing:-.06em;margin:0 0 56px}.proof-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:8vw}.proof-copy{font-size:22px;line-height:1.55;color:#c3c8c4}.facts{display:grid;gap:22px;border-top:1px solid var(--line);padding-top:20px}.fact{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:20px}.fact span:first-child{color:#9fa6a2}
 .price{background:#eef0eb;color:#111;padding:14vh 6vw}.price-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:60px}.price h2{font-size:clamp(58px,8vw,120px);line-height:.9;letter-spacing:-.06em;margin:0}.price p{max-width:620px;font-size:20px;line-height:1.5;color:#5f6662}.price-tag{font-size:clamp(74px,10vw,150px);letter-spacing:-.08em;font-weight:720;white-space:nowrap}.note{font-size:12px;color:#707772;margin-top:20px}
 footer{padding:28px 6vw 48px;display:flex;justify-content:space-between;gap:24px;color:#919894;font-size:12px}
-.modal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.72);display:none;place-items:center;padding:20px}.modal.open{display:grid}.dialog{max-width:520px;width:100%;background:#f1f2ee;color:#121413;border-radius:24px;padding:30px}.dialog h3{font-size:34px;letter-spacing:-.04em;margin:0 0 12px}.dialog p{line-height:1.55;color:#5d6460}.dialog .row{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.close{background:#111;color:white;border:0;border-radius:999px;padding:11px 16px;cursor:pointer}
-@media(max-width:760px){.nav{height:64px;padding:0 16px}.nav a.hide{display:none}.hero-copy{padding:0 20px 62px}.chapter{grid-template-columns:1fr;min-height:auto;padding:92px 20px;gap:34px}.chapter:nth-of-type(even) .media{order:-1}.media{min-height:58svh;border-radius:18px}.proof{padding:100px 20px}.proof-grid{grid-template-columns:1fr;gap:36px}.price{padding:100px 20px}.price-inner{grid-template-columns:1fr;gap:30px}.price-tag{font-size:72px}footer{padding:24px 20px 40px;flex-direction:column}}
+.modal,.video-modal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.78);display:none;place-items:center;padding:20px}.modal.open,.video-modal.open{display:grid}.dialog{max-width:520px;width:100%;background:#f1f2ee;color:#121413;border-radius:24px;padding:30px}.dialog h3{font-size:34px;letter-spacing:-.04em;margin:0 0 12px}.dialog p{line-height:1.55;color:#5d6460}.dialog .row{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.close{background:#111;color:white;border:0;border-radius:999px;padding:11px 16px;cursor:pointer}.video-frame{position:relative;width:min(1120px,94vw);background:#050606;border-radius:24px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.45)}.video-frame video{display:block;width:100%;max-height:78vh;background:#000}.video-close{position:absolute;z-index:3;right:14px;top:14px;border:0;border-radius:999px;padding:10px 13px;background:rgba(0,0,0,.72);color:#fff;font-weight:700;cursor:pointer}.video-note{padding:12px 16px;color:#aeb4b0;font-size:12px}
+@media(max-width:760px){.nav{height:64px;padding:0 16px}.nav a.hide{display:none}.hero-copy{padding:0 20px 62px}.video-story{padding:72px 20px 12px}.video-thumb{min-height:54svh;border-radius:20px}.video-launch .play{width:64px;height:64px}.chapter{grid-template-columns:1fr;min-height:auto;padding:92px 20px;gap:34px}.chapter:nth-of-type(even) .media{order:-1}.media{min-height:58svh;border-radius:18px}.proof{padding:100px 20px}.proof-grid{grid-template-columns:1fr;gap:36px}.price{padding:100px 20px}.price-inner{grid-template-columns:1fr;gap:30px}.price-tag{font-size:72px}footer{padding:24px 20px 40px;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero video{display:none}}
 </style>
 </head>
@@ -34,13 +34,20 @@ footer{padding:28px 6vw 48px;display:flex;justify-content:space-between;gap:24px
 <section class="hero">
   <div class="poster"></div>
   <video autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200">
-    <source src="https://videos.pexels.com/video-files/31385600/13392171_1920_1080_30fps.mp4" type="video/mp4">
+    <source src="assets/easygrade-preview.mp4" type="video/mp4">
   </video>
   <div class="hero-copy">
     <div class="eyebrow">Professional color grading for DaVinci Resolve</div>
     <h1>Grade less.<br>Create more.</h1>
     <p>Shape skin, foliage, skies and more with focused controls — and spend less time building the setup.</p>
     <div class="hero-actions"><button class="trial" data-trial>Preview 14-day trial</button><a class="ghost" href="#skin">See the grade</a></div>
+  </div>
+</section>
+<section class="video-story" aria-label="EasyGrade video preview">
+  <div class="video-thumb">
+    <img src="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="EasyGrade video preview thumbnail">
+    <button class="video-launch" type="button" data-video aria-label="Play EasyGrade video preview"><span class="play" aria-hidden="true">▶</span><span class="play-label">Watch grading preview</span></button>
+    <span class="video-badge">0:05</span>
   </div>
 </section>
 
@@ -90,6 +97,13 @@ footer{padding:28px 6vw 48px;display:flex;justify-content:space-between;gap:24px
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="trial-title">
   <div class="dialog"><div class="meta">14-day trial</div><h3 id="trial-title">Start your EasyGrade trial.</h3><p>Your 14-day trial begins only when EasyGrade is activated for the first time in DaVinci Resolve.</p><div class="row"><button class="close" data-close>Close</button></div></div>
 </div>
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="EasyGrade video preview">
+  <div class="video-frame">
+    <button class="video-close" type="button" data-video-close aria-label="Close video preview">Close</button>
+    <video id="previewVideo" controls playsinline preload="metadata" poster="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200"><source src="assets/easygrade-preview.mp4" type="video/mp4"></video>
+    <div class="video-note">Sample footage · video preview</div>
+  </div>
+</div>
 <script>
 document.querySelectorAll('[data-compare]').forEach(box=>{
   const r=box.querySelector('.range');
@@ -97,10 +111,18 @@ document.querySelectorAll('[data-compare]').forEach(box=>{
   r.addEventListener('input',sync);sync();
 });
 const modal=document.getElementById('modal');
+const videoModal=document.getElementById('videoModal');
+const previewVideo=document.getElementById('previewVideo');
+let videoOpener=null;
+const openVideo=e=>{videoOpener=e.currentTarget;videoModal.classList.add('open');previewVideo.play().catch(()=>{});};
+const closeVideo=()=>{videoModal.classList.remove('open');previewVideo.pause();if(videoOpener)videoOpener.focus();};
+document.querySelectorAll('[data-video]').forEach(b=>b.addEventListener('click',openVideo));
+document.querySelectorAll('[data-video-close]').forEach(b=>b.addEventListener('click',closeVideo));
+videoModal.addEventListener('click',e=>{if(e.target===videoModal)closeVideo()});
 document.querySelectorAll('[data-trial]').forEach(b=>b.addEventListener('click',()=>modal.classList.add('open')));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>modal.classList.remove('open')));
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');if(videoModal.classList.contains('open'))closeVideo();}});
 </script>
 </body>
 </html>

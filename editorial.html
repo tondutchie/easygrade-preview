@@ -5,24 +5,51 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EasyGrade | Professional Color Grading for DaVinci Resolve</title>
 <style>
-:root{--paper:#eee7da;--ink:#171713;--muted:#675f55;--rule:#2b2a26;--accent:#9a2f24;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}a{color:inherit}button{font:inherit}
+:root{--paper:#eee7da;--ink:#171713;--muted:#675f55;--rule:#2b2a26;--accent:#9a2f24;--max:1180px;--track-display:-.015em;--track-copy:-.01em;--track-label:-.02em;--track-ui:-.01em;--track-overline:.02em;--media-gap:clamp(24px,2.2vw,32px);--study-radius:28px;--study-pad:32px;--study-card-ratio:3/4;--study-section-pad:clamp(80px,8vw,112px);--section-seam:clamp(28px,3vw,48px);--surface-dark:rgb(26 26 23);--copy:rgb(60 57 50);--rule-on-dark:rgb(113 110 102);--copy-on-dark:rgb(210 204 191);--muted-on-dark:rgb(170 165 154);--media-placeholder:rgb(216 212 204);--font-display:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;--font-text:"SF Pro Text",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-text)}a{color:inherit}button{font:inherit}
 .top{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;gap:20px;padding:0 24px;border-bottom:1px solid var(--rule);background:rgba(238,231,218,.93);backdrop-filter:blur(8px)}
-.logo{font:700 20px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.04em}.top>div:first-child{display:flex;align-items:center}.menu{margin-left:auto}.sign{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.logo{font:700 20px/1 var(--font-text);}.top>div:first-child{display:flex;align-items:center}.menu{margin-left:auto}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 var(--font-text);text-decoration:none;}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
 .mast{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;max-width:var(--max);margin:auto;padding:12vh 28px 10vh;border-bottom:1px solid var(--rule)}
-.kicker{font:700 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}.mast h1{font-size:clamp(64px,9vw,132px);line-height:.83;letter-spacing:-.07em;font-weight:400;margin:18px 0 22px;max-width:760px}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.42;max-width:620px}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:16px;font-size:14px;line-height:1.55;color:var(--muted)}
-.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}.cover .stamp{position:absolute;right:18px;bottom:18px;background:var(--paper);padding:9px 11px;border:1px solid var(--ink);font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
-.chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:160px 1fr 1fr;gap:34px}.num{font:italic 50px/1 Georgia,serif;color:var(--accent)}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.93;font-weight:400;letter-spacing:-.05em;margin:0 0 22px}.chapter p{font-size:19px;line-height:1.58;color:#3c3932;max-width:34ch}.annotation{border-left:1px solid var(--rule);padding-left:18px;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.annotation-label{display:block;margin-bottom:10px;font:700 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.1em}.annotation-body{margin:0!important;max-width:38ch!important;font:400 15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;letter-spacing:0;text-transform:none;color:var(--muted)!important}
-.collage{max-width:var(--max);margin:auto;padding:11vh 28px 14vh;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:end}.main-img,.small-img{position:relative;overflow:hidden;background:#ddd}.main-img{min-height:68svh}.small-img{min-height:40svh;margin-bottom:12vh}.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.caption{font:600 11px/1.45 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.07em;margin-top:9px}
-.proof{background:#1a1a17;color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.9;letter-spacing:-.06em;margin:0}.proof .copy{font-size:20px;line-height:1.55;color:#d2ccbf}.list{margin-top:40px;border-top:1px solid #716e66}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid #716e66}.item span:first-child{font:600 10px/1.4 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#aaa59a}
-.price{padding:14vh 28px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}.price h2{font-size:clamp(58px,8vw,118px);font-weight:400;line-height:.87;letter-spacing:-.065em;margin:0}.price p{font-size:18px;line-height:1.55;max-width:560px}.price-tag{font-size:clamp(76px,10vw,150px);line-height:.8;letter-spacing:-.08em}.note{font:600 10px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:20px}
-footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font:600 10px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em}
+.kicker{font:600 12px/1.5 var(--font-text);text-transform:uppercase}.mast h1{font-size:clamp(64px,9vw,132px);line-height:.9;font-weight:400;margin:20px 0 28px;max-width:none;width:max-content}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.55;max-width:32ch;}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:20px;font-size:14px;line-height:1.65;max-width:48ch;color:var(--muted);}
+.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+.chapter.chapter--continuation{padding-top:var(--section-seam)}
+.chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:34px}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.98;font-weight:400;margin:0 0 24px}.chapter p{font-size:19px;line-height:1.65;color:var(--copy);max-width:34ch;}.annotation{border-left:1px solid var(--rule);padding-left:18px;color:var(--muted);font-family:var(--font-text)}.annotation-body{margin:0!important;max-width:38ch!important;font:400 15px/1.6 var(--font-text)!important;text-transform:none;color:var(--muted)!important}
+
+
+.study-section{max-width:var(--max);margin:auto;padding:var(--study-section-pad) 28px var(--section-seam)}
+.study-header{margin-bottom:40px}
+.study-header h2{margin:0;font:600 48px/1.083 var(--font-display);letter-spacing:-.003em}
+.study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--media-gap)}
+.study-card{position:relative;aspect-ratio:var(--study-card-ratio);overflow:hidden;border-radius:var(--study-radius);background:var(--media-placeholder)}
+.study-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0,rgba(0,0,0,.18) 24%,rgba(0,0,0,0) 52%);pointer-events:none}
+.study-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.study-card-copy{position:absolute;z-index:1;top:var(--study-pad);left:var(--study-pad);right:var(--study-pad);font-family:var(--font-display);color:rgba(255,255,255,.94)}
+.study-card-copy h3{margin:0 0 3px;font-size:17px;line-height:21px;font-weight:600;letter-spacing:-.022em}
+.study-card-copy p{margin:0;max-width:12ch;font-size:28px;line-height:32px;font-weight:600;letter-spacing:.007em}
+
+.proof{background:var(--surface-dark);color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.96;margin:0}.proof .copy{font-size:20px;line-height:1.65;max-width:38ch;color:var(--copy-on-dark);}.list{margin-top:40px;border-top:1px solid var(--rule-on-dark)}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule-on-dark)}.item strong{}.item span:first-child{font:600 10px/1.4 var(--font-text);text-transform:uppercase;color:var(--muted-on-dark)}
+.price{padding:14vh 28px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}.price h2{font-size:clamp(58px,8vw,118px);font-weight:400;line-height:.94;margin:0}.price p{font-size:18px;line-height:1.65;max-width:34ch;}.price-tag{font-size:clamp(76px,10vw,150px);line-height:.8;}
+footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font:600 10px/1.5 var(--font-text);text-transform:uppercase;}
 #portrait,#system,#price{scroll-margin-top:64px}
-.modal{position:fixed;inset:0;z-index:40;background:rgba(20,19,17,.72);display:none;place-items:center;padding:20px}.modal.open{display:grid}.dialog{max-width:520px;width:100%;background:var(--paper);border:1px solid var(--ink);padding:30px}.dialog h3{font-size:42px;font-weight:400;letter-spacing:-.04em;margin:12px 0}.dialog p{line-height:1.6}.close{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;font:700 12px/1 sans-serif}
-@media(min-width:761px) and (max-width:1024px){.chapter{grid-template-columns:84px minmax(0,1fr);gap:24px;padding:10vh 28px}.chapter .annotation{grid-column:2;max-width:56ch}.chapter h2{max-width:12ch}.chapter p{max-width:42ch}.num{font-size:42px}.proof-inner{gap:5vw}}
-@media(max-width:760px){.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:58px minmax(0,1fr);padding:88px 16px;gap:18px}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:2}.chapter p{max-width:34ch}.annotation-body{font-size:15px!important;line-height:1.62!important}.num{font-size:34px}.collage{grid-template-columns:1fr;padding:82px 16px 96px}.small-img{min-height:45svh;margin:0}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.price{grid-template-columns:1fr;padding:96px 16px}.price-tag{font-size:76px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
-@media(orientation:landscape) and (max-height:520px){#portrait,#system,#price{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.collage{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:16px;padding:56px 16px 64px;align-items:start}.main-img,.small-img{min-height:0;margin-bottom:0;overflow:visible;background:transparent}.collage img{position:static;display:block;width:100%;height:auto;object-fit:contain}.proof{padding:64px 16px}.price{padding:64px 16px}footer{padding:20px 16px 28px}}
-@media(orientation:landscape) and (max-height:520px) and (min-width:640px) and (max-width:760px){.mast{grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:28px}.mast h1{font-size:clamp(48px,7.5vw,58px)}.mast .dek{font-size:17px;line-height:1.42}.chapter{grid-template-columns:54px minmax(0,1fr) minmax(180px,.72fr);gap:18px}.chapter .annotation{grid-column:auto}.chapter h2{font-size:clamp(42px,7vw,56px)}.chapter p{font-size:17px}.proof-inner{grid-template-columns:1fr 1fr;gap:5vw}.price{grid-template-columns:1fr auto;gap:32px}footer{grid-template-columns:1fr 1fr}}
+.modal{position:fixed;inset:0;z-index:40;background:rgba(20,19,17,.72);display:none;place-items:center;padding:20px}.modal.open{display:grid}.dialog{max-width:520px;width:100%;background:var(--paper);border:1px solid var(--ink);padding:30px}.dialog h3{font-size:42px;font-weight:400;margin:12px 0}.dialog p{line-height:1.6;}.close{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
+@media(min-width:761px) and (max-width:1024px){.chapter{grid-template-columns:minmax(0,1fr);gap:24px;padding:10vh 28px}.chapter .annotation{grid-column:1;max-width:56ch}.chapter h2{max-width:12ch}.chapter p{max-width:42ch}.proof-inner{gap:5vw}}
+@media(max-width:760px){.study-section{padding:80px 16px var(--section-seam)}.study-header{margin-bottom:28px}.study-header h2{font-size:40px;line-height:44px}.study-grid{grid-template-columns:1fr;gap:24px}.study-card{aspect-ratio:4/5}.study-card-copy{top:24px;left:24px;right:24px}.study-card-copy p{font-size:28px;line-height:32px}.mast h1{width:100%;max-width:100%}.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.mast h1{font-size:clamp(52px,15vw,64px);line-height:.96;margin-bottom:24px}.mast .dek{max-width:30ch;line-height:1.58}.mast .aside{line-height:1.65}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:minmax(0,1fr);padding:88px 16px;gap:18px}.chapter.chapter--continuation{padding-top:var(--section-seam)}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:1}.chapter p{max-width:34ch}.annotation-body{font-size:15px!important;line-height:1.62!important}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.price{grid-template-columns:1fr;padding:96px 16px}.price-tag{font-size:76px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
+@media(orientation:landscape) and (max-height:520px){#portrait,#system,#price{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.proof{padding:64px 16px}.price{padding:64px 16px}footer{padding:20px 16px 28px}}
+@media(orientation:landscape) and (max-height:520px) and (min-width:640px) and (max-width:760px){.mast{grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:28px}.mast h1{font-size:clamp(48px,7.5vw,58px)}.mast .dek{font-size:17px;line-height:1.42}.chapter{grid-template-columns:minmax(0,1fr) minmax(180px,.72fr);gap:18px}.chapter .annotation{grid-column:auto}.chapter h2{font-size:clamp(42px,7vw,56px)}.chapter p{font-size:17px}.proof-inner{grid-template-columns:1fr 1fr;gap:5vw}.price{grid-template-columns:1fr auto;gap:32px}footer{grid-template-columns:1fr 1fr}}
+
+/* TYPOGRAPHY_TRACKING_START */
+.logo,.menu a,.trial,.close{letter-spacing:var(--track-ui)}
+.kicker{letter-spacing:var(--track-overline)}
+.mast h1,.chapter h2,.proof h2,.price h2,.price-tag,.dialog h3{letter-spacing:var(--track-display)}
+.mast .dek,.mast .aside,.chapter p,.annotation-body,.proof .copy,.price p,.dialog p,.item strong{letter-spacing:var(--track-copy)}
+.item span:first-child,footer{letter-spacing:var(--track-label)}
+/* TYPOGRAPHY_TRACKING_END */
+.display-line{display:block;white-space:nowrap}
+
+/* APPLE_FONT_SYSTEM_START */
+.mast h1,.chapter h2,.proof h2,.price h2,.price-tag,.dialog h3,.study-header h2,.study-card-copy p{font-family:var(--font-display)}
+body,.logo,.menu a,.trial,.close,.kicker,.mast .dek,.mast .aside,.chapter p,.annotation,.annotation-body,.proof .copy,.item,footer,.study-card-copy h3{font-family:var(--font-text)}
+/* APPLE_FONT_SYSTEM_END */
 </style>
 </head>
 <body>
@@ -35,42 +62,51 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
 <section class="mast">
   <div>
     <div class="kicker">Professional color grading for DaVinci Resolve</div>
-    <h1>Grade less.<br>Create more.</h1>
+    <h1><span class="display-line">Grade less.</span><span class="display-line">Create more.</span></h1>
     <p class="dek">Skin, foliage, skies and more in one focused OFX. Less setup. More time grading.</p>
   </div>
   <aside class="aside">Planned for macOS on Apple silicon · 14-day trial · 2 activations · $149 one-time.</aside>
 </section>
 
 <figure class="cover">
-  <img src="https://images.pexels.com/photos/12841860/pexels-photo-12841860.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="EasyGrade grading reference">
+  <img src="https://images.pexels.com/photos/11746341/pexels-photo-11746341.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="Japanese portrait used as an EasyGrade grading reference">
 </figure>
 
 <section class="chapter" id="portrait">
-  <div class="num">I</div>
-  <div><div class="kicker">Portrait / Skin</div><h2>Better skin. Less setup.</h2><p>Make common skin adjustments in one place instead of rebuilding the setup shot after shot.</p></div>
-  <aside class="annotation"><span class="annotation-label">What it solves</span><p class="annotation-body">Keep your attention on tone, color and texture—not on rebuilding nodes.</p></aside>
+  <div><h2>Better skin. Less setup.</h2><p>Make common skin adjustments in one place instead of rebuilding the setup shot after shot.</p></div>
+  <aside class="annotation"><p class="annotation-body">Keep your attention on tone, color and texture—not on rebuilding nodes.</p></aside>
 </section>
 
-<section class="collage" aria-label="EasyGrade grading study">
-  <div>
-    <div class="main-img"><img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Portrait reference"></div>
-    <div class="caption">Portrait study</div>
+<section class="study-section" aria-labelledby="study-title">
+  <div class="study-header">
+    <h2 id="study-title">See what EasyGrade is built for.</h2>
   </div>
-  <div>
-    <div class="small-img"><img src="https://images.pexels.com/photos/1458694/pexels-photo-1458694.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Foliage reference"></div>
-    <div class="caption">Foliage study</div>
+  <div class="study-grid">
+    <article class="study-card">
+      <img src="https://images.pexels.com/photos/11746333/pexels-photo-11746333.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Japanese portrait reference">
+      <div class="study-card-copy">
+        <h3>Portrait</h3>
+        <p>Natural skin. Less setup.</p>
+      </div>
+    </article>
+    <article class="study-card">
+      <img src="https://images.pexels.com/photos/34243715/pexels-photo-34243715.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Japanese mountain village landscape reference">
+      <div class="study-card-copy">
+        <h3>Environment</h3>
+        <p>Shape the scene. Keep it coherent.</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="chapter">
-  <div class="num">II</div>
-  <div><div class="kicker">Environment / Foliage + Sky</div><h2>Greens and skies. One workflow.</h2><p>Move foliage, sky and atmosphere toward the look you want without breaking the flow of the grade.</p></div>
-  <aside class="annotation"><span class="annotation-label">What it solves</span><p class="annotation-body">Control greens, sky and atmosphere from the same OFX instead of spreading the job across more nodes.</p></aside>
+<section class="chapter chapter--continuation">
+  <div><h2>Greens and skies. One workflow.</h2><p>Move foliage, sky and atmosphere toward the look you want without breaking the flow of the grade.</p></div>
+  <aside class="annotation"><p class="annotation-body">Control greens, sky and atmosphere from the same OFX instead of spreading the job across more nodes.</p></aside>
 </section>
 
 <section class="proof" id="system">
   <div class="proof-inner">
-    <div><div class="kicker">Why EasyGrade</div><h2>Less setup.<br>More grading.</h2></div>
+    <div><h2>Less setup.<br>More grading.</h2></div>
     <div><p class="copy">EasyGrade doesn’t replace node-based grading. It removes repeated setup around common corrections so you can spend more of the session grading.</p>
       <div class="list">
         <div class="item"><span>Platform</span><strong>macOS · Apple silicon (M1 or later)</strong></div>

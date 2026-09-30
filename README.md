@@ -99,7 +99,7 @@ Current hero/support direction includes concise customer-facing language such as
 
 - “Grade less. Create more.”
 - “Skin, foliage, skies and more in one focused OFX. Less setup. More time grading.”
-- “Planned for macOS on Apple silicon · 14-day trial · 2 activations · $149 one-time.”
+- “Product platform, trial, pricing and licensing details will be published after they are confirmed.”
 
 Do not replace customer copy with design-review narration or internal implementation notes.
 

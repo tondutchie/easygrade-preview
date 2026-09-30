@@ -25,7 +25,7 @@
 .study-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .study-card-copy{position:absolute;z-index:1;top:var(--study-pad);left:var(--study-pad);right:var(--study-pad);font-family:var(--font-display);color:rgba(255,255,255,.94)}
 .study-card-copy h3{margin:0 0 3px;font-size:17px;line-height:21px;font-weight:600;letter-spacing:-.022em}
-.study-card-copy p{margin:0;max-width:12ch;font-size:28px;line-height:32px;font-weight:600;letter-spacing:.007em}
+.study-card-copy p{margin:0;max-width:12ch;font-size:28px;line-height:32px;font-weight:600;letter-spacing:.007em}.media-credit{font-size:12px;line-height:1.5;color:var(--muted)}.cover .media-credit{padding:10px 2px 0}
 
 .proof{background:var(--surface-dark);color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.96;margin:0}.proof .copy{font-size:20px;line-height:1.65;max-width:38ch;color:var(--copy-on-dark);}.list{margin-top:40px;border-top:1px solid var(--rule-on-dark)}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule-on-dark)}.item strong{}.item span:first-child{font:600 10px/1.4 var(--font-text);text-transform:uppercase;color:var(--muted-on-dark)}
 .price{padding:14vh 28px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}.price h2{font-size:clamp(58px,8vw,118px);font-weight:400;line-height:.94;margin:0}.price p{font-size:18px;line-height:1.65;max-width:34ch;}.price-tag{font-size:clamp(76px,10vw,150px);line-height:.8;}
@@ -65,16 +65,17 @@ body,.logo,.menu a,.trial,.close,.kicker,.mast .dek,.mast .aside,.chapter p,.ann
     <h1><span class="display-line">Grade less.</span><span class="display-line">Create more.</span></h1>
     <p class="dek">Skin, foliage, skies and more in one focused OFX. Less setup. More time grading.</p>
   </div>
-  <aside class="aside">Planned for macOS on Apple silicon · 14-day trial · 2 activations · $149 one-time.</aside>
+  <p class="aside">Product platform, trial, pricing and licensing details will be published after they are confirmed.</p>
 </section>
 
 <figure class="cover">
-  <img src="https://images.pexels.com/photos/11746341/pexels-photo-11746341.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="Japanese portrait used as an EasyGrade grading reference">
+  <img src="https://images.pexels.com/photos/11746341/pexels-photo-11746341.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="Stock Japanese portrait reference; not a verified EasyGrade output">
+  <figcaption class="media-credit">Stock reference image from <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">Pexels</a>; it is not a verified EasyGrade result.</figcaption>
 </figure>
 
 <section class="chapter" id="portrait">
   <div><h2>Better skin. Less setup.</h2><p>Make common skin adjustments in one place instead of rebuilding the setup shot after shot.</p></div>
-  <aside class="annotation"><p class="annotation-body">Keep your attention on tone, color and texture—not on rebuilding nodes.</p></aside>
+  <div class="annotation" role="note"><p class="annotation-body">Keep your attention on tone, color and texture—not on rebuilding nodes.</p></div>
 </section>
 
 <section class="study-section" aria-labelledby="study-title">
@@ -83,14 +84,14 @@ body,.logo,.menu a,.trial,.close,.kicker,.mast .dek,.mast .aside,.chapter p,.ann
   </div>
   <div class="study-grid">
     <article class="study-card">
-      <img src="https://images.pexels.com/photos/11746333/pexels-photo-11746333.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Japanese portrait reference">
+      <img src="https://images.pexels.com/photos/11746333/pexels-photo-11746333.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Stock Japanese portrait reference; not a verified EasyGrade output">
       <div class="study-card-copy">
         <h3>Portrait</h3>
         <p>Natural skin. Less setup.</p>
       </div>
     </article>
     <article class="study-card">
-      <img src="https://images.pexels.com/photos/34243715/pexels-photo-34243715.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Japanese mountain village landscape reference">
+      <img src="https://images.pexels.com/photos/34243715/pexels-photo-34243715.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Stock Japanese mountain village landscape reference; not a verified EasyGrade output">
       <div class="study-card-copy">
         <h3>Environment</h3>
         <p>Shape the scene. Keep it coherent.</p>
@@ -101,7 +102,7 @@ body,.logo,.menu a,.trial,.close,.kicker,.mast .dek,.mast .aside,.chapter p,.ann
 
 <section class="chapter chapter--continuation">
   <div><h2>Greens and skies. One workflow.</h2><p>Move foliage, sky and atmosphere toward the look you want without breaking the flow of the grade.</p></div>
-  <aside class="annotation"><p class="annotation-body">Control greens, sky and atmosphere from the same OFX instead of spreading the job across more nodes.</p></aside>
+  <div class="annotation" role="note"><p class="annotation-body">Control greens, sky and atmosphere from the same OFX instead of spreading the job across more nodes.</p></div>
 </section>
 
 <section class="proof" id="system">
@@ -109,24 +110,24 @@ body,.logo,.menu a,.trial,.close,.kicker,.mast .dek,.mast .aside,.chapter p,.ann
     <div><h2>Less setup.<br>More grading.</h2></div>
     <div><p class="copy">EasyGrade doesn’t replace node-based grading. It removes repeated setup around common corrections so you can spend more of the session grading.</p>
       <div class="list">
-        <div class="item"><span>Platform</span><strong>macOS · Apple silicon (M1 or later)</strong></div>
-        <div class="item"><span>Trial</span><strong>14 days from first activation</strong></div>
-        <div class="item"><span>License</span><strong>EasyGrade 1.x · yours to keep</strong></div>
-        <div class="item"><span>Devices</span><strong>2 activations</strong></div>
+        <div class="item"><span>Platform</span><strong>To be confirmed</strong></div>
+        <div class="item"><span>Trial</span><strong>To be confirmed</strong></div>
+        <div class="item"><span>License</span><strong>To be confirmed</strong></div>
+        <div class="item"><span>Devices</span><strong>To be confirmed</strong></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="price" id="price">
-  <div><div class="kicker">One-time purchase · no subscription</div><h2>Try it first.<br>Keep it if it fits.</h2><p>The 14-day trial starts on first activation. If EasyGrade fits your workflow, it’s $149 once for EasyGrade 1.x with up to 2 activations.</p><button class="trial" data-trial>Preview 14-day trial</button></div>
-  <div class="price-tag">$149</div>
+  <div><div class="kicker">Availability and purchase details</div><h2>Try it first.<br>Keep it if it fits.</h2><p>Trial, pricing, licensing and activation details will be published after they are confirmed.</p><button class="trial" data-trial>Preview availability</button></div>
+  <div class="price-tag">TBC</div>
 </section>
 </main>
 <footer><span>EasyGrade</span><span>Professional color grading for DaVinci Resolve</span></footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="trial-title">
-  <div class="dialog" tabindex="-1"><div class="kicker">14-day trial</div><h3 id="trial-title">Try EasyGrade for 14 days.</h3><p>Your 14-day trial starts only when you activate EasyGrade in DaVinci Resolve for the first time.</p><button class="close" data-close>Close</button></div>
+  <div class="dialog" tabindex="-1"><div class="kicker">Availability preview</div><h3 id="trial-title">EasyGrade details are being prepared.</h3><p>This preview does not create an account, start a trial, collect payment or issue a license.</p><button class="close" data-close>Close</button></div>
 </div>
 <script>
 

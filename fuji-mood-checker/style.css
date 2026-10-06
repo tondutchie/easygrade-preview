@@ -478,3 +478,89 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px
   border-width:3px;
   border-bottom:0;
 }
+
+
+/* Live member visibility fix: keep chips above the snow cap and inside visible width */
+#page-live .mountain .zone{
+  z-index:7;
+}
+#page-live .mountain .snow{
+  z-index:5;
+  pointer-events:none;
+}
+#page-live .mountain .member-chip{
+  position:relative;
+  z-index:9;
+}
+#page-live .mountain .z-great{
+  align-items:flex-end;
+  padding-inline:31%;
+  padding-bottom:8px;
+}
+#page-live .mountain .z-great .zone-inner{
+  padding-top:0;
+  align-items:flex-end;
+}
+#page-live .mountain .z-good{
+  padding-inline:25%;
+}
+
+/* Success cartoon: keep large faces proportional and centered */
+.cute-face.success-face{
+  width:64px!important;
+  height:64px!important;
+  flex:0 0 64px!important;
+  border-radius:50%!important;
+  transform:none!important;
+  overflow:hidden!important;
+  margin:0 auto;
+}
+.cute-face.great.success-face::before{
+  display:block!important;
+  content:"★  ★"!important;
+  left:8px!important;
+  top:12px!important;
+  width:48px!important;
+  height:auto!important;
+  font-size:18px!important;
+  line-height:1!important;
+  letter-spacing:8px!important;
+  color:#4f3a48!important;
+  background:none!important;
+  box-shadow:none!important;
+  white-space:nowrap!important;
+}
+.cute-face.great.success-face::after{
+  width:23px!important;
+  height:13px!important;
+  bottom:8px!important;
+  border:3px solid #4f3a48!important;
+  border-top:0!important;
+  border-radius:0 0 18px 18px!important;
+  background:linear-gradient(#fff 0 34%,#ff7c8f 35% 100%)!important;
+}
+.cute-face.good.success-face::after{
+  width:21px!important;
+  height:11px!important;
+  bottom:10px!important;
+  border-width:3px!important;
+}
+.cute-face.neutral.success-face::after{
+  width:20px!important;
+  bottom:14px!important;
+  border-top-width:3px!important;
+}
+.cute-face.low.success-face::after,
+.cute-face.verylow.success-face::after{
+  width:21px!important;
+  height:11px!important;
+  bottom:10px!important;
+  border-width:3px!important;
+  border-bottom:0!important;
+}
+.bigemoji{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:74px;
+}

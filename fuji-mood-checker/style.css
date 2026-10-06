@@ -411,3 +411,70 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px
 .preview-pill .legend-face{width:28px;height:28px;flex:0 0 28px}
 .admin-mood-cell{display:inline-flex;align-items:center;gap:7px}
 .admin-face{width:24px;height:24px;flex:0 0 24px}
+
+
+/* Preview score-to-zone placement fix */
+.pc1{left:47%;top:29%!important} /* Dear 7 -> GOOD */
+.pc2{left:57%;top:13%!important} /* Nok 9 -> GREAT */
+.pc3{left:37%;top:34%!important} /* Aom 8 -> GOOD */
+.pc4{left:55%;top:35%!important} /* Ploy 7 -> GOOD */
+.pc7{left:75%;top:33%!important} /* Golf 8 -> GOOD */
+.pc5{left:47%;top:52%!important} /* May 5 -> NEUTRAL */
+.pc6{left:57%;top:70%!important} /* Krit 3 -> LOW */
+
+/* Keep the currently-selected mood cartoon upright and centered */
+.mobile-score-row>div:last-child{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-width:54px;
+}
+.mobile-score-big{line-height:1}
+.mood-cartoon-current{
+  width:54px;
+  min-height:46px;
+  justify-content:center;
+  margin-top:4px;
+}
+.cute-face.checkin-face{
+  width:42px!important;
+  height:42px!important;
+  flex:0 0 42px!important;
+  border-radius:50%!important;
+  transform:none!important;
+  overflow:hidden;
+}
+.cute-face.great.checkin-face::before{
+  display:block;
+  left:5px;
+  top:7px;
+  width:34px;
+  font-size:14px;
+  letter-spacing:5px;
+}
+.cute-face.great.checkin-face::after{
+  width:17px;
+  height:10px;
+  bottom:6px;
+  border-width:3px;
+}
+.cute-face.good.checkin-face::after{
+  width:15px;
+  height:8px;
+  bottom:8px;
+  border-width:3px;
+}
+.cute-face.neutral.checkin-face::after{
+  width:14px;
+  bottom:10px;
+  border-top-width:3px;
+}
+.cute-face.low.checkin-face::after,
+.cute-face.verylow.checkin-face::after{
+  width:15px;
+  height:8px;
+  bottom:8px;
+  border-width:3px;
+  border-bottom:0;
+}

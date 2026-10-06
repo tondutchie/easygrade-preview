@@ -60,5 +60,5 @@ function renderResponses(){const id=$('adminResponseSession').value,r=id?db.resp
 $('exportData').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db,null,2)],{type:'application/json'}));a.download='fuji-mood-checker-export.json';a.click();URL.revokeObjectURL(a.href)};
 $('resetPrototype').textContent='Reset Server Data';$('resetPrototype').onclick=async()=>{if(!confirm('ล้าง Member, Session และ Mood ทั้งหมดบน Server จริง? การกระทำนี้ย้อนกลับไม่ได้'))return;const r=await adminAction('resetAll');if(!r.ok)return alert(r.data?.error||'Reset ไม่สำเร็จ');localStorage.removeItem(UI_LIVE_KEY);await syncState(true);route('checkin')};
 function renderAll(){renderTop();renderStaticOptions();updateMoodUI();renderCheckin();renderLive();if($('adminPanel').style.display==='block')renderAdminData()}
-async function init(){renderAll();await syncState();showPage(location.hash.replace('#','')||'checkin');setInterval(()=>syncState(true),2500)}
+async function init(){renderAll();await syncState();showPage(location.hash.replace('#','')||'checkin');setInterval(()=>{if((location.hash.replace('#','')||'checkin')==='live')syncState(true)},2500);setInterval(()=>{if((location.hash.replace('#','')||'checkin')==='admin'&&adminPin)syncState(true)},5000)}
 init();

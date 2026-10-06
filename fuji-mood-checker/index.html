@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fuji Mood Checker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">🗻</div>
+      <div class="brand-copy"><b>FUJI MOOD CHECKER</b><span>DGT Team Retro • Production</span></div>
+    </div>
+    <div class="nav">
+      <button data-page="checkin" class="active">Check-in</button>
+      <button data-page="live">Fuji Live</button>
+      <button data-page="admin">Admin / History</button>
+    </div>
+    <div class="status-pill"><i id="topDot" class="dot"></i><span id="topStatus">ยังไม่มี Retro ที่เปิด</span></div>
+  </header>
+
+  <main>
+    <section id="page-checkin" class="page active">
+      <div class="checkin-page">
+        <aside class="card left-brand-panel">
+          <div class="left-brand-inner">
+            <div class="fuji-logo">
+              <div class="fuji-icon"><div class="sun"></div><div class="mountain"></div><div class="snow"></div></div>
+              <h2>FUJI<br>MOOD CHECKER</h2>
+              <p>DGT Team Retro</p>
+            </div>
+            <p class="lead">Check your mood. See the team mountain!<br>Together we climb higher!</p>
+
+            <div class="qr-card">
+              <div class="qr-preview"></div>
+              <div class="scan-btn">Scan to Check-in</div>
+              <div class="small-note">เข้าจากมือถือได้เลย ไม่ต้อง Login</div>
+            </div>
+
+            <div class="step-list">
+              <h3>Flow การใช้งาน</h3>
+              <ol>
+                <li>เปิด QR ของ Squad ในห้อง Retro</li>
+                <li>สมาชิกเลือกชื่อของตัวเอง</li>
+                <li>ให้คะแนน Mood วันนี้ 0–10</li>
+                <li>ชื่อขึ้นบนภูเขาแบบ Real-time</li>
+              </ol>
+            </div>
+          </div>
+        </aside>
+
+        <div class="phone-frame">
+          <div class="phone-inner">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-topbar">
+                <div class="fuji-logo" style="align-items:flex-start;text-align:left;gap:2px;transform:scale(.68);transform-origin:left top;margin:-8px 0 -30px -6px">
+                  <div class="fuji-icon"><div class="sun"></div><div class="mountain"></div><div class="snow"></div></div>
+                  <h2 style="font-size:22px">FUJI<br>MOOD CHECKER</h2>
+                </div>
+                <div class="lang-pill">🇹🇭 TH ▾</div>
+              </div>
+
+              <div class="mobile-form-title">
+                <h1>DGT Team Retro<br>Sprint 14</h1>
+                <p>มาเช็คอิน Mood กันครับ<br>เลือก Squad → เลือกชื่อ → เลือก Mood</p>
+              </div>
+
+              <div id="checkinFormWrap">
+                <div id="sessionBanner" class="session-banner" style="display:none">
+                  <div class="icon">🏷️</div>
+                  <div><b id="sessionBannerTitle"></b><small id="sessionBannerSub"></small></div>
+                </div>
+                <div id="fallbackSessionField" class="mobile-field-card field">
+                  <label>1 เลือก Active Retro</label>
+                  <select id="checkinSessionSelect"></select>
+                </div>
+                <div class="mobile-field-card field">
+                  <label id="memberLabel">2 เลือกชื่อตัวเอง</label>
+                  <select id="memberSelect" disabled><option value="">เลือกชื่อ</option></select>
+                </div>
+                <div class="mobile-field-card field">
+                  <label id="moodLabel">3 เลือก Mood วันนี้</label>
+                  <div class="mobile-score-row">
+                    <div>
+                      <div id="moodZone" class="mobile-zone-name">NEUTRAL</div>
+                      <div class="sub" id="checkinHelp" style="margin-top:6px">เปิดจาก QR ของ Squad เพื่อเข้า Session โดยตรง</div>
+                    </div>
+                    <div style="text-align:right">
+                      <div id="moodScore" class="mobile-score-big">5</div>
+                      <div id="moodEmoji" style="font-size:34px">😐</div>
+                    </div>
+                  </div>
+                  <div class="mobile-slider-wrap">
+                    <input id="moodRange" type="range" min="0" max="10" step="1" value="5" />
+                    <div class="scale"><span>0</span><span>2</span><span>4</span><span>5</span><span>7</span><span>8</span><span>10</span></div>
+                    <div class="emoji-row"><span>😡</span><span>😣</span><span>😕</span><span>😐</span><span>🙂</span><span>😊</span><span>😄</span></div>
+                  </div>
+                </div>
+                <div class="mobile-actions"><button id="submitMood" class="primary">✈ Submit</button></div>
+                <p class="footer-note">ข้อมูลบันทึกบน Server กลางและ Sync ข้ามอุปกรณ์อัตโนมัติ</p>
+              </div>
+
+              <div id="successState" class="success">
+                <div class="check">✓</div>
+                <h2>ส่ง Mood สำเร็จแล้ว!</h2>
+                <div id="successEmoji" class="bigemoji">🙂</div>
+                <p id="successText" class="sub"></p>
+                <div style="display:grid;gap:10px;margin-top:18px">
+                  <button id="editMood" class="primary" style="background:linear-gradient(135deg,#173f72,#0f5ea4)">↺ ส่งใหม่ (อัปเดต Mood)</button>
+                  <button class="secondary" onclick="location.hash='live'">↗ Fuji Live</button>
+                </div>
+                <div class="mini-home-preview"><div class="mount"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card right-preview-panel">
+          <div class="overview-card">
+            <div class="eyebrow">Visual reference matched</div>
+            <h1 class="hero-title" id="checkinTitle" style="font-size:38px;margin-top:10px">ตัวอย่างหน้าตาแบบ Fuji</h1>
+            <p class="sub" style="margin-top:10px;max-width:520px;line-height:1.7;font-weight:700">ปรับ UI ให้ใกล้กับตัวอย่างเดิมมากที่สุด ทั้งโทนสี, ภูเขาแบ่ง 5 ระดับ, metric card, สคริปต์ข้อความ, และ presentation style สำหรับเปิดใน Retro</p>
+            <div class="preview-board">
+              <div class="preview-topline">
+                <div>
+                  <div style="font-size:20px;font-weight:1000;color:#fff">DGT - Sprint 14</div>
+                  <div class="date">📅 1 - 14 Mar 2025</div>
+                </div>
+                <div class="preview-metric-box">
+                  <div style="font-size:14px;font-weight:900">Team Mood (Average)</div>
+                  <div style="display:flex;align-items:flex-start;gap:10px;margin-top:2px"><div class="big">7.6</div><div class="delta">↑ +0.8</div></div>
+                  <div class="row"><div>24 / 32<br><span style="font-size:13px;opacity:.9">Checked in</span></div><div>75%</div></div>
+                  <div class="preview-progress"><span></span></div>
+                </div>
+              </div>
+              <div class="preview-legend">
+                <div class="preview-pill pg">😄 GREAT<small>9 - 10</small></div>
+                <div class="preview-pill pgd">🙂 GOOD<small>7 - 8</small></div>
+                <div class="preview-pill pn">😐 NEUTRAL<small>5 - 6</small></div>
+                <div class="preview-pill pl">😕 LOW<small>3 - 4</small></div>
+                <div class="preview-pill pv">😣 VERY LOW<small>0 - 2</small></div>
+              </div>
+              <div class="preview-main-mountain"><div class="mount"><div class="preview-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+              <div class="preview-chip pc1"><span class="preview-avatar">D</span> Dear <span class="emoji">🙂</span></div>
+              <div class="preview-chip pc2"><span class="preview-avatar">N</span> Nok <span class="emoji">😄</span></div>
+              <div class="preview-chip pc3"><span class="preview-avatar">A</span> Aom <span class="emoji">🙂</span></div>
+              <div class="preview-chip pc4"><span class="preview-avatar">P</span> Ploy <span class="emoji">🙂</span></div>
+              <div class="preview-chip pc5"><span class="preview-avatar">M</span> May <span class="emoji">😐</span></div>
+              <div class="preview-chip pc6"><span class="preview-avatar">K</span> Krit <span class="emoji">😕</span></div>
+              <div class="preview-chip pc7"><span class="preview-avatar">G</span> Golf <span class="emoji">🙂</span></div>
+              <div class="preview-motto">Good Team<br>Higher Tomorrow ♥</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="page-live" class="page">
+      <div class="card live-stage">
+        <div class="live-layout">
+          <aside class="live-sidebar">
+            <div class="fuji-logo">
+              <div class="fuji-icon"><div class="sun"></div><div class="mountain"></div><div class="snow"></div></div>
+              <h2>FUJI<br>MOOD CHECKER</h2>
+              <p>DGT Team Retro</p>
+            </div>
+            <div class="intro">Check your mood. See the team mountain!<br>Together we climb higher!</div>
+            <div class="live-qr-card">
+              <div id="liveQrHost" class="live-qr-host"></div>
+              <div class="live-qr-btn">Scan to Check-in</div>
+              <div class="live-qr-sub">เข้าจากมือถือได้เลย ไม่ต้อง Login</div>
+              <div id="liveSidebarSession" class="live-qr-sub" style="margin-top:8px;font-size:11px;color:#57708a">ยังไม่มี Session</div>
+              <div id="liveQrLink" class="live-qr-link">ยังไม่มี Session</div>
+            </div>
+          </aside>
+
+          <div class="live-main">
+            <div class="live-board">
+              <div class="live-head">
+                <div>
+                  <h1 id="liveTitle">ยังไม่มี Session</h1>
+                  <div class="date-row"><span>📅</span><p id="liveSub"></p></div>
+                </div>
+                <div class="metrics-panel">
+                  <div class="cap">Team Mood (Average)</div>
+                  <div class="main">
+                    <div id="avgMood" class="score">–</div>
+                    <div class="delta-wrap">
+                      <div class="delta">↑ <span id="liveDelta">+0.0</span></div>
+                      <div class="delta-sub" id="liveDeltaSub">from previous sprint</div>
+                    </div>
+                  </div>
+                  <div class="checkcap">Checked in</div>
+                  <div class="checkrow"><b id="checkinCount">0 / 0</b><span id="livePercent">0%</span></div>
+                  <div class="progress"><span id="liveProgressBar"></span></div>
+                </div>
+              </div>
+              <div class="legend">
+                <div class="legend-item great"><span class="l-emoji">😄</span><div class="legend-copy">GREAT<small>9 - 10</small></div></div>
+                <div class="legend-item good"><span class="l-emoji">🙂</span><div class="legend-copy">GOOD<small>7 - 8</small></div></div>
+                <div class="legend-item neutral"><span class="l-emoji">😐</span><div class="legend-copy">NEUTRAL<small>5 - 6</small></div></div>
+                <div class="legend-item low"><span class="l-emoji">😕</span><div class="legend-copy">LOW<small>3 - 4</small></div></div>
+                <div class="legend-item verylow"><span class="l-emoji">😣</span><div class="legend-copy">VERY LOW<small>0 - 2</small></div></div>
+              </div>
+              <div class="mountain-wrap">
+                <div class="mountain">
+                  <div class="snow"></div>
+                  <div class="zone z-great"><div id="zone-great" class="zone-inner"></div></div>
+                  <div class="zone z-good"><div id="zone-good" class="zone-inner"></div></div>
+                  <div class="zone z-neutral"><div id="zone-neutral" class="zone-inner"></div></div>
+                  <div class="zone z-low"><div id="zone-low" class="zone-inner"></div></div>
+                  <div class="zone z-verylow"><div id="zone-verylow" class="zone-inner"></div></div>
+                </div>
+              </div>
+              <div class="live-shore"></div>
+              <div class="live-water"></div>
+              <div class="live-motto">Good Team<br>Higher Tomorrow ♥</div>
+              <div id="liveEmpty" class="empty-live">
+                <b>ยังไม่มี Mood ใน Session นี้</b>
+                <div class="sub" style="margin-top:6px">เมื่อสมาชิก Submit ชื่อจะขึ้นบน Fuji อัตโนมัติ</div>
+              </div>
+              <div class="live-session-picker">
+                <label>Retro Session</label>
+                <select id="liveSessionSelect"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-admin" class="page">
+      <div id="adminLocked" class="admin-login card card-pad">
+        <div class="lock">🔐</div>
+        <h1 style="margin:0 0 8px">Admin</h1>
+        <p id="adminPrompt" class="sub">ตั้ง PIN 6 หลักสำหรับ Admin ในเครื่องนี้</p>
+        <div class="field" style="margin-top:20px"><label>Admin PIN</label><input id="adminPin" inputmode="numeric" maxlength="6" type="password" placeholder="6 digits" /></div>
+        <button id="adminUnlock" class="primary">ดำเนินการ</button>
+        <p class="footer-note">Admin PIN ถูกตรวจสอบที่ Server</p>
+      </div>
+
+      <div id="adminPanel" style="display:none">
+        <div class="admin-shell">
+          <div class="card browser-card">
+            <div class="browser-top"><span class="browser-dot red"></span><span class="browser-dot yellow"></span><span class="browser-dot green"></span><span class="browser-title">FUJI MOOD CHECKER</span></div>
+            <div class="browser-body">
+              <div class="browser-nav"><div><strong style="font-size:16px;color:#173a68">Admin Overview</strong><div style="font-size:12px;color:#72879b;margin-top:3px">ภาพรวม Mood และสถานะล่าสุด — จัดการทั้งหมดในหน้าเดียว</div></div></div>
+              <div class="dash-body">
+                <div class="stats-grid">
+                  <div class="stat-card"><div class="cap">Team Mood (Avg.)</div><div class="big"><span id="adminStatAvg">–</span> <span id="adminStatDelta" class="mini-green">+0.0</span></div></div>
+                  <div class="stat-card"><div class="cap">Checked in</div><div class="big" id="adminStatCheckin">0 / 0</div><div class="progress"><span id="adminStatCheckinBar"></span></div></div>
+                  <div class="stat-card"><div class="cap">Total Members</div><div class="big" id="adminStatMembers">0</div></div>
+                  <div class="stat-card"><div class="cap">Active Squads</div><div class="big" id="adminStatSquads">0</div></div>
+                </div>
+                <div class="chart-grid">
+                  <div class="chart-card"><h3>Mood Distribution</h3><div id="adminMoodDist" class="dist-bars"></div></div>
+                  <div class="chart-card"><h3>Trend (Average)</h3><div id="adminTrend" class="trend-shell"></div></div>
+                </div>
+                <div class="table-card">
+                  <div class="head">Member Details</div>
+                  <div style="overflow:auto"><table><thead><tr><th>Name</th><th>Squad</th><th>Mood</th><th>Zone</th><th>Updated At</th></tr></thead><tbody id="adminMiniResponseTable"></tbody></table></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="management-grid">
+            <div class="card card-pad">
+              <div class="section-title"><h2>Open Retro</h2><span class="tag">Year + Sprint + Squad</span></div>
+              <div class="inline">
+                <div class="field"><label>Year</label><input id="sessionYear" type="number" value="2026" /></div>
+                <div class="field"><label>Sprint</label><input id="sessionSprint" type="number" min="1" placeholder="14" /></div>
+              </div>
+              <div class="field"><label>Squad</label><select id="sessionSquad"></select></div>
+              <button id="openSession" class="primary">Open Retro Session</button>
+              <div class="note" style="margin-top:14px">ถ้าเปิด Squad เดิมใน Sprint เดิมซ้ำ ระบบจะเตือนและ <b>ลบ Mood เดิมทั้งหมดจริง</b> ก่อนเริ่มรอบใหม่</div>
+            </div>
+
+            <div class="card card-pad">
+              <div class="section-title"><h2>Public URL</h2><span class="tag warn">สำหรับ QR</span></div>
+              <div class="field"><label>Base URL</label><input id="publicBaseUrl" placeholder="https://your-domain.example/" /></div>
+              <button id="saveBaseUrl" class="secondary">Copy URL</button>
+              <div class="note" style="margin-top:14px">URL นี้ถูกสร้างอัตโนมัติจาก Production Server และใช้สร้าง QR ของแต่ละ Squad</div>
+            </div>
+
+            <div class="card card-pad span2">
+              <div class="section-title"><h2>Active Retro Sessions</h2><span id="activeSessionCount" class="tag off">0 Active</span></div>
+              <div id="activeSessions" class="session-list"></div>
+            </div>
+
+            <div class="card card-pad span2">
+              <div class="section-title"><h2>Member Master</h2><button id="addMemberBtn" class="secondary">+ เพิ่ม Member</button></div>
+              <div style="overflow:auto"><table><thead><tr><th>ID</th><th>Name</th><th>Squad</th><th>Status</th><th></th></tr></thead><tbody id="memberTable"></tbody></table></div>
+            </div>
+
+            <div class="card card-pad">
+              <div class="section-title"><h2>Squads</h2><span class="tag">9 Squads</span></div>
+              <div id="squadPills" class="squad-pills"></div>
+            </div>
+
+            <div class="card card-pad">
+              <div class="section-title"><h2>Data</h2><span class="tag">Server data</span></div>
+              <div class="toolbar"><button id="exportData" class="secondary">Export JSON</button><button id="resetPrototype" class="danger">Reset Server Data</button></div>
+            </div>
+
+            <div class="card card-pad span2">
+              <div class="section-title"><h2>History by Squad / Sprint</h2></div>
+              <div id="historyBars" class="history-bars"></div>
+            </div>
+
+            <div class="card card-pad span2">
+              <div class="section-title"><h2>Session Responses</h2><select id="adminResponseSession" style="max-width:360px"></select></div>
+              <div style="overflow:auto"><table><thead><tr><th>Name</th><th>Squad</th><th>Mood</th><th>Zone</th><th>Updated</th></tr></thead><tbody id="responseTable"></tbody></table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="memberModal" style="position:fixed;inset:0;background:#0b20374d;z-index:100;display:none;place-items:center;padding:20px">
+  <div class="card card-pad" style="width:min(500px,100%)">
+    <h3>เพิ่ม Member</h3>
+    <div class="field"><label>ชื่อที่แสดง</label><input id="newMemberName" placeholder="เช่น Dear" /></div>
+    <div class="field"><label>Squad</label><select id="newMemberSquad"></select></div>
+    <div class="toolbar" style="justify-content:flex-end"><button id="cancelMember" class="secondary">ยกเลิก</button><button id="saveMember" class="primary" style="width:auto">เพิ่ม Member</button></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

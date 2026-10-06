@@ -88,13 +88,21 @@
                     </div>
                     <div style="text-align:right">
                       <div id="moodScore" class="mobile-score-big">5</div>
-                      <div id="moodEmoji" style="font-size:34px">😐</div>
+                      <div id="moodEmoji" class="mood-cartoon-current"><span class="cute-face neutral checkin-face"></span></div>
                     </div>
                   </div>
                   <div class="mobile-slider-wrap">
                     <input id="moodRange" type="range" min="0" max="10" step="1" value="5" />
                     <div class="scale"><span>0</span><span>2</span><span>4</span><span>5</span><span>7</span><span>8</span><span>10</span></div>
-                    <div class="emoji-row"><span>😡</span><span>😣</span><span>😕</span><span>😐</span><span>🙂</span><span>😊</span><span>😄</span></div>
+                    <div class="emoji-row cartoon-scale">
+    <span class="cute-face verylow scale-face"></span>
+    <span class="cute-face verylow scale-face"></span>
+    <span class="cute-face low scale-face"></span>
+    <span class="cute-face neutral scale-face"></span>
+    <span class="cute-face good scale-face"></span>
+    <span class="cute-face good scale-face"></span>
+    <span class="cute-face great scale-face"></span>
+  </div>
                   </div>
                 </div>
                 <div class="mobile-actions"><button id="submitMood" class="primary">✈ Submit</button></div>
@@ -104,7 +112,7 @@
               <div id="successState" class="success">
                 <div class="check">✓</div>
                 <h2>ส่ง Mood สำเร็จแล้ว!</h2>
-                <div id="successEmoji" class="bigemoji">🙂</div>
+                <div id="successEmoji" class="bigemoji"><span class="cute-face good success-face"></span></div>
                 <p id="successText" class="sub"></p>
                 <div style="display:grid;gap:10px;margin-top:18px">
                   <button id="editMood" class="primary" style="background:linear-gradient(135deg,#173f72,#0f5ea4)">↺ ส่งใหม่ (อัปเดต Mood)</button>
@@ -134,11 +142,11 @@
                 </div>
               </div>
               <div class="preview-legend">
-                <div class="preview-pill pg">😄 GREAT<small>9 - 10</small></div>
-                <div class="preview-pill pgd">🙂 GOOD<small>7 - 8</small></div>
-                <div class="preview-pill pn">😐 NEUTRAL<small>5 - 6</small></div>
-                <div class="preview-pill pl">😕 LOW<small>3 - 4</small></div>
-                <div class="preview-pill pv">😣 VERY LOW<small>0 - 2</small></div>
+                <div class="preview-pill pg"><span class="cute-face great legend-face"></span><span>GREAT<small>9 - 10</small></span></div>
+                <div class="preview-pill pgd"><span class="cute-face good legend-face"></span><span>GOOD<small>7 - 8</small></span></div>
+                <div class="preview-pill pn"><span class="cute-face neutral legend-face"></span><span>NEUTRAL<small>5 - 6</small></span></div>
+                <div class="preview-pill pl"><span class="cute-face low legend-face"></span><span>LOW<small>3 - 4</small></span></div>
+                <div class="preview-pill pv"><span class="cute-face verylow legend-face"></span><span>VERY LOW<small>0 - 2</small></span></div>
               </div>
               <div class="preview-main-mountain"><div class="mount"><div class="preview-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
               <div class="preview-chip pc1">Dear <span class="score-badge">7</span><span class="cute-face good member-face"></span></div>

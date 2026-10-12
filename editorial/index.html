@@ -12,7 +12,7 @@
 .logo{font:700 20px/1 var(--font-text);}.top>div:first-child{display:flex;align-items:center}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 var(--font-text);text-decoration:none;}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
 .mast{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;max-width:var(--max);margin:auto;padding:12vh 28px 10vh;border-bottom:1px solid var(--rule)}
 .mast h1{font-size:clamp(64px,9vw,132px);line-height:.9;font-weight:400;margin:0 0 28px;max-width:none;width:max-content}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.55;max-width:32ch;}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:20px;font-size:14px;line-height:1.65;max-width:48ch;color:var(--muted);}
-.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+.cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img,.cover video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}
 .chapter.chapter--continuation{padding-top:var(--section-seam)}
 .chapter{max-width:var(--max);margin:auto;padding:13vh 28px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:34px}.chapter h2{font-size:clamp(44px,6vw,88px);line-height:.98;font-weight:400;margin:0 0 24px}.chapter p{font-size:19px;line-height:1.65;color:var(--copy);max-width:34ch;}.annotation{border-left:1px solid var(--rule);padding-left:18px;color:var(--muted);font-family:var(--font-text)}.annotation-body{margin:0!important;max-width:38ch!important;font:400 15px/1.6 var(--font-text)!important;text-transform:none;color:var(--muted)!important}
 
@@ -34,7 +34,7 @@ footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid
 .modal{max-width:520px;width:calc(100% - 32px);max-height:calc(100dvh - 32px);background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:0}.modal::backdrop{background:rgba(20,19,17,.72)}.dialog{padding:32px}html.modal-open,html.modal-open body{overflow:hidden}.dialog h2{font-size:42px;font-weight:400;margin:12px 0}.dialog p{line-height:1.6;}.close{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
 @media(min-width:761px) and (max-width:1024px){.chapter{grid-template-columns:minmax(0,1fr);gap:24px;padding:10vh 28px}.chapter .annotation{grid-column:1;max-width:56ch}.chapter h2{max-width:12ch}.chapter p{max-width:42ch}.proof-inner{gap:5vw}}
 @media(max-width:760px){.study-section{padding:80px 16px var(--section-seam)}.study-header{margin-bottom:28px}.study-header h2{font-size:40px;line-height:44px}.study-grid{grid-template-columns:1fr;gap:24px}.study-card{aspect-ratio:4/5}.study-card-copy{top:24px;left:24px;right:24px}.study-card-copy h3{font-size:28px;line-height:32px}.mast h1{width:100%;max-width:100%}.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.mast h1{font-size:clamp(52px,15vw,64px);line-height:.96;margin-bottom:24px}.mast .dek{max-width:30ch;line-height:1.58}.mast .aside{line-height:1.65}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:minmax(0,1fr);padding:88px 16px;gap:18px}.chapter.chapter--continuation{padding-top:var(--section-seam)}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:1}.chapter p{max-width:34ch}.annotation-body{font-size:15px!important;line-height:1.62!important}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.invitation{grid-template-columns:1fr;padding:96px 16px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
-@media(orientation:landscape) and (max-height:520px){#portrait,#system,#trial{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.proof{padding:64px 16px}.invitation{padding:64px 16px}footer{padding:20px 16px 28px}}
+@media(orientation:landscape) and (max-height:520px){#portrait,#system,#trial{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img,.cover video{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.proof{padding:64px 16px}.invitation{padding:64px 16px}footer{padding:20px 16px 28px}}
 @media(orientation:landscape) and (max-height:520px) and (min-width:640px) and (max-width:760px){.mast{grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:28px}.mast h1{font-size:clamp(48px,7.5vw,58px)}.mast .dek{font-size:17px;line-height:1.42}.chapter{grid-template-columns:minmax(0,1fr) minmax(180px,.72fr);gap:18px}.chapter .annotation{grid-column:auto}.chapter h2{font-size:clamp(42px,7vw,56px)}.chapter p{font-size:17px}.proof-inner{grid-template-columns:1fr 1fr;gap:5vw}.invitation{grid-template-columns:1fr auto;gap:32px}footer{grid-template-columns:1fr 1fr}}
 
 /* TYPOGRAPHY_TRACKING_START */
@@ -57,6 +57,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 @media(max-width:760px){.menu-toggle{display:block}.header-cluster{gap:16px}.media-disclosure{margin-inline:16px}.top{gap:12px}.invitation{padding:80px 16px}.invitation h2{font-size:clamp(52px,13vw,72px)}.dialog{padding:24px}.dialog h2{font-size:36px}}
 @media(max-width:360px){.header-cluster{gap:8px}.logo{font-size:18px}.menu-toggle{padding-inline:8px}.trial{padding-inline:10px}.top{gap:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* The video retains the cover geometry and its original color grade. */
+.hero-video{background:var(--ink)}.hero-video video{filter:none;object-position:60% center}.video-toggle{position:absolute;z-index:1;right:16px;bottom:16px;min-height:44px;padding:12px 16px;border:1px solid var(--paper);background:var(--ink);color:var(--paper);font:600 14px/1 var(--font-text);cursor:pointer}.video-toggle[hidden]{display:none}.hero-video.media-unavailable video{display:none}.hero-video.media-unavailable{background:var(--ink) url('/assets/hero/eg-moji-hero-poster.jpg') 60% center/cover no-repeat}
+@media(orientation:landscape) and (max-height:520px){.hero-video video{object-fit:contain}.hero-video.media-unavailable{min-height:calc(min(84svh,420px) + 56px);background-size:contain}}
 </style>
 </head>
 <body>
@@ -75,10 +78,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   <aside class="aside">A concept preview of EasyGrade, a modular color-grading OFX toolkit for DaVinci Resolve. Pricing, trial terms and platform availability are not announced here.</aside>
 </section>
 
-<figure class="cover">
-  <img src="https://images.pexels.com/photos/11746341/pexels-photo-11746341.jpeg?auto=compress&cs=tinysrgb&w=2200" alt="Stock portrait of a woman in Japan">
+<figure class="cover hero-video">
+  <video id="hero-video" width="1920" height="1080" muted loop playsinline preload="metadata" poster="/assets/hero/eg-moji-hero-poster.jpg" aria-label="Moji portrait video" aria-describedby="hero-media-note">
+    <source src="/assets/hero/eg-moji-hero-1080p.mp4" type="video/mp4">
+    <img src="/assets/hero/eg-moji-hero-poster.jpg" alt="Moji smiling at the camera">
+  </video>
+  <button class="video-toggle" type="button" aria-controls="hero-video" hidden>Play video</button>
 </figure>
-<p class="media-disclosure">Stock photography for presentation. Not verified EasyGrade output.</p>
+<p class="media-disclosure" id="hero-media-note">Video supplied by the EasyGrade creator.</p>
 
 <section class="chapter" id="portrait">
   <div><h2>Start with skin.</h2><p>Tone, color and texture shape how a portrait feels. Keep the person at the center of your visual decisions.</p></div>
@@ -147,6 +154,23 @@ modal.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const items=[...mod
 modal.addEventListener('close',()=>{document.documentElement.classList.remove('modal-open');trialOpener?.focus();});
 modal.addEventListener('click',e=>{const r=modal.getBoundingClientRect();if(e.target===modal&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))modal.close();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!mobileMenu.hidden){setMenu(false);toggle.focus();}});
+
+const heroVideo=document.querySelector('#hero-video');
+const videoToggle=document.querySelector('.video-toggle');
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+const syncVideoButton=()=>{videoToggle.textContent=heroVideo.paused?'Play video':'Pause video';};
+const pauseHero=()=>{heroVideo.pause();syncVideoButton();};
+const playHero=()=>{heroVideo.play().then(syncVideoButton).catch(syncVideoButton);};
+videoToggle.hidden=false;
+videoToggle.addEventListener('click',()=>{if(heroVideo.paused)playHero();else pauseHero();});
+heroVideo.addEventListener('play',syncVideoButton);
+heroVideo.addEventListener('pause',syncVideoButton);
+const applyMotionPreference=()=>{if(motionPreference.matches){heroVideo.removeAttribute('autoplay');pauseHero();heroVideo.currentTime=0;}else{heroVideo.setAttribute('autoplay','');playHero();}};
+motionPreference.addEventListener('change',applyMotionPreference);
+const showVideoFallback=()=>{document.querySelector('.hero-video').classList.add('media-unavailable');videoToggle.hidden=true;};
+heroVideo.addEventListener('error',showVideoFallback);
+heroVideo.querySelector('source').addEventListener('error',showVideoFallback);
+applyMotionPreference();
 </script>
 </body>
 </html>

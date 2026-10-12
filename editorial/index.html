@@ -60,6 +60,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 /* The video retains the cover geometry and its original color grade. */
 .hero-video{background:var(--ink)}.hero-video video{filter:none;object-position:60% center}.video-toggle{position:absolute;z-index:1;right:16px;bottom:16px;min-height:44px;padding:12px 16px;border:1px solid var(--paper);background:var(--ink);color:var(--paper);font:600 14px/1 var(--font-text);cursor:pointer}.video-toggle[hidden]{display:none}.hero-video.media-unavailable video{display:none}.hero-video.media-unavailable{background:var(--ink) url('/assets/hero/eg-moji-hero-poster.jpg') 60% center/cover no-repeat}
 @media(orientation:landscape) and (max-height:520px){.hero-video video{object-fit:contain}.hero-video.media-unavailable{min-height:calc(min(84svh,420px) + 56px);background-size:contain}}
+.workflow{display:block}.workflow-intro{max-width:760px}.workflow-intro p{max-width:48ch}.workflow h3{margin:0 0 20px;font:600 clamp(24px,3vw,36px)/1.2 var(--font-display);letter-spacing:var(--track-display)}.workflow-nodes{margin-top:48px}.workflow-nodes svg{display:block;width:100%;height:auto;background:#242424}.workflow-nodes>p,.workflow-note{font:400 14px/1.6 var(--font-text)!important;color:var(--muted);max-width:65ch!important}.workflow-look{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:56px}.workflow-look p{margin-top:0;max-width:38ch}.workflow-panel{margin:0}.workflow-panel svg{display:block;width:100%;height:auto;background:#242424}.look-controls{margin:32px 0}.look-controls>div{padding:16px 0;border-top:1px solid var(--rule)}.look-controls dt{display:flex;justify-content:space-between;gap:16px;font:600 18px/1.4 var(--font-text)}.look-controls dt span{font-variant-numeric:tabular-nums}.look-controls dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy);max-width:40ch}
+@media(max-width:760px){.workflow h3{font-size:24px}.workflow-nodes{margin-top:32px}.workflow-nodes h3{font-size:22px;max-width:24ch}.workflow-look{grid-template-columns:minmax(0,1fr);gap:32px;margin-top:40px}.workflow-panel{grid-row:1}.look-controls{margin-top:24px}.workflow-nodes svg{min-height:70px}.workflow-intro h2{font-size:clamp(40px,9vw,56px)}}
 </style>
 </head>
 <body>
@@ -87,9 +89,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 </figure>
 <p class="media-disclosure" id="hero-media-note">Video supplied by the EasyGrade creator.</p>
 
-<section class="chapter" id="portrait">
-  <div><h2>Start with skin.</h2><p>Tone, color and texture shape how a portrait feels. Keep the person at the center of your visual decisions.</p></div>
-  <aside class="annotation"><p class="annotation-body">Skin is one of EasyGrade’s core product areas, alongside Foliage and Sky.</p></aside>
+<section class="chapter workflow" id="portrait" aria-labelledby="workflow-title">
+  <div class="workflow-intro"><h2 id="workflow-title">Create a look.<br>Tune skin to the scene.</h2><p>Balance your shot, choose a Creative Look, then decide how much of its character reaches skin.</p></div>
+  <div class="workflow-nodes">
+    <h3>CST In → Balance → EasyGrade → CST Out</h3>
+    <svg viewBox="1480 360 1515 220" role="img" aria-label="The four connected Resolve nodes shown in the creator’s screenshot: CST In, Bal, EG and CST Out" xmlns="http://www.w3.org/2000/svg"><image href="/assets/workflow/orange-teal-resolve-original.png" width="3840" height="904" /></svg>
+  </div>
+  <div class="workflow-look">
+    <div><h3>Orange &amp; Teal</h3><p>These are three Creative Look controls shown in this shot. They belong to the Look, alongside the separate Skin feature.</p>
+      <dl class="look-controls">
+        <div><dt>Skin in Scene <span>70</span></dt><dd>Controls how much of the Look’s character reaches skin-colored areas.</dd></div>
+        <div><dt>Orange Character <span>75</span></dt><dd>Pulls skin and warm colors toward orange.</dd></div>
+        <div><dt>Teal Character <span>75</span></dt><dd>Pulls colors outside the warm range toward teal and blue.</dd></div>
+      </dl>
+      <p class="workflow-note">Settings shown for this shot.</p>
+    </div>
+    <figure class="workflow-panel"><svg viewBox="3045 170 735 540" role="img" aria-label="Original Resolve Creative Look panel with Orange &amp; Teal selected; Skin in Scene 70, Orange Character 75, and Teal Character 75" xmlns="http://www.w3.org/2000/svg"><image href="/assets/workflow/orange-teal-resolve-original.png" width="3840" height="904" /></svg></figure>
+  </div>
 </section>
 
 <section class="study-section" aria-labelledby="study-title">

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EasyGrade | Grade less. Create more.</title>
-<meta name="description" content="An EasyGrade concept preview for color grading in DaVinci Resolve. Stock imagery illustrates Skin, Foliage and Sky themes.">
+<meta name="description" content="An EasyGrade concept preview for color grading in DaVinci Resolve. Creator footage and images illustrate the workflow and Foliage adjustment.">
 <style>
 :root{--paper:#eee7da;--ink:#171713;--muted:#675f55;--rule:#2b2a26;--accent:#9a2f24;--max:1180px;--track-display:-.015em;--track-copy:-.01em;--track-label:-.02em;--track-ui:-.01em;--media-gap:clamp(24px,2.2vw,32px);--study-radius:28px;--study-pad:32px;--study-card-ratio:3/4;--study-section-pad:clamp(80px,8vw,112px);--section-seam:clamp(28px,3vw,48px);--surface-dark:rgb(26 26 23);--copy:rgb(60 57 50);--rule-on-dark:rgb(113 110 102);--copy-on-dark:rgb(210 204 191);--muted-on-dark:rgb(170 165 154);--media-placeholder:rgb(216 212 204);--font-display:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;--font-text:"SF Pro Text",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-text)}a{color:inherit}button{font:inherit}
@@ -62,6 +62,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 @media(orientation:landscape) and (max-height:520px){.hero-video video{object-fit:contain}.hero-video.media-unavailable{min-height:calc(min(84svh,420px) + 56px);background-size:contain}}
 .workflow{display:block}.workflow-intro{max-width:760px}.workflow-intro p{max-width:48ch}.workflow h3{margin:0 0 20px;font:600 clamp(24px,3vw,36px)/1.2 var(--font-display);letter-spacing:var(--track-display)}.workflow-nodes{margin-top:48px}.workflow-nodes svg{display:block;width:100%;height:auto;background:#242424}.workflow-nodes>p,.workflow-note{font:400 14px/1.6 var(--font-text)!important;color:var(--muted);max-width:65ch!important}.workflow-look{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:56px}.workflow-look p{margin-top:0;max-width:38ch}.workflow-panel{margin:0}.workflow-panel svg{display:block;width:100%;height:auto;background:#242424}.look-controls{margin:32px 0}.look-controls>div{padding:16px 0;border-top:1px solid var(--rule)}.look-controls dt{display:flex;justify-content:space-between;gap:16px;font:600 18px/1.4 var(--font-text)}.look-controls dt span{font-variant-numeric:tabular-nums}.look-controls dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy);max-width:40ch}
 @media(max-width:760px){.workflow h3{font-size:24px}.workflow-nodes{margin-top:32px}.workflow-nodes h3{font-size:22px;max-width:24ch}.workflow-look{grid-template-columns:minmax(0,1fr);gap:32px;margin-top:40px}.workflow-panel{grid-row:1}.look-controls{margin-top:24px}.workflow-nodes svg{min-height:70px}.workflow-intro h2{font-size:clamp(40px,9vw,56px)}}
+.study-example{min-width:0}.study-caption{margin:16px 0 0;font:400 15px/1.6 var(--font-text);color:var(--muted);max-width:52ch}.study-example .study-card img{object-position:50% 50%}.study-caption span{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -109,28 +110,28 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 </section>
 
 <section class="study-section" aria-labelledby="study-title">
-  <div class="study-header">
-    <h2 id="study-title">A portrait. An environment.</h2>
-  </div>
+  <div class="study-header"><h2 id="study-title">Same scene. Different foliage.</h2></div>
   <div class="study-grid">
-    <article class="study-card">
-      <img src="https://images.pexels.com/photos/11746333/pexels-photo-11746333.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Stock portrait of a woman in Japan">
-      <div class="study-card-copy">
-        <h3>Skin, tone<br>and texture.</h3>
+    <article class="study-example">
+      <div class="study-card">
+        <img src="/assets/foliage/mew-original.jpg" width="7008" height="4672" loading="lazy" alt="Original image: a woman in a blue dress with green foliage behind her">
+        <div class="study-card-copy"><h3>Original</h3></div>
       </div>
+      <p class="study-caption">Before the Foliage adjustment.</p>
     </article>
-    <article class="study-card">
-      <img src="https://images.pexels.com/photos/34243715/pexels-photo-34243715.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Stock landscape of a mountain village in Japan">
-      <div class="study-card-copy">
-        <h3>Greens, skies<br>and atmosphere.</h3>
+    <article class="study-example">
+      <div class="study-card">
+        <img src="/assets/foliage/mew-foliage.jpg" width="7008" height="4672" loading="lazy" alt="Foliage-adjusted version of the same image, with autumn-colored leaves behind the woman">
+        <div class="study-card-copy"><h3>Foliage adjustment</h3></div>
       </div>
+      <p class="study-caption">Settings used for this result:<br>Foliage · <span>Exposure −1.13</span> · <span>Saturation 0.85</span> · <span>Hue −60°</span></p>
     </article>
   </div>
 </section>
 
 <section class="chapter chapter--continuation">
-  <div><h2>Shape the environment.</h2><p>Greens and skies carry the scene’s atmosphere. Decide how they support the portrait and the look you want.</p></div>
-  <aside class="annotation"><p class="annotation-body">These stock images illustrate the subject matter. They do not demonstrate plugin results.</p></aside>
+  <div><h2>Shape the environment.</h2><p>Foliage shapes the scene’s atmosphere. Adjust its color to support the portrait and the look you want.</p></div>
+  <aside class="annotation"><p class="annotation-body">The creator’s original and Foliage-adjusted images, shown with the same crop.</p></aside>
 </section>
 
 <section class="proof" id="system">
@@ -150,7 +151,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   <div><h2>Less grading.<br>More creating.</h2><p>Explore the trial preview. This interaction creates no account, starts no trial and takes no payment.</p><button class="trial" type="button" data-trial>Preview trial</button></div>
 </section>
 </main>
-<footer><span>EasyGrade · Concept preview</span><span>Stock photography. Not verified EasyGrade output.</span></footer>
+<footer><span>EasyGrade · Concept preview</span><span>Images supplied by the EasyGrade creator.</span></footer>
 
 <dialog class="modal" id="modal" aria-labelledby="trial-title" aria-describedby="trial-description">
   <div class="dialog"><h2 id="trial-title">Preview the flow.</h2><p id="trial-description">This concept preview creates no account, starts no trial and takes no payment. Commercial terms are not announced here.</p><button class="close" type="button" data-close autofocus>Close preview</button></div>

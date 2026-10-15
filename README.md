@@ -228,3 +228,7 @@ The important system is:
 - no AI-template labels
 - responsive composition, not desktop shrinking
 - fresh TOS evidence before a final claim
+
+## Current Editorial repair contract (2026-10-12)
+
+Read [AGENTS.md](AGENTS.md) and [the repair contract](docs/EDITORIAL_REPAIR_CONTRACT.md) first. Earlier149$/14days/2activations and platform/version copy above is historical prototype content, not an approved commercial offer. The repaired Editorial page keeps the documented Apple-system typography and paired-media intent while applying owner no-eyebrow direction, truthful stock/preview disclosure, mobile navigation and the current canonical public-facts gate. Other variants and the root redirect are outside this repair.

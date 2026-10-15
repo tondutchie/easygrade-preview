@@ -30,11 +30,11 @@
 .proof{background:var(--surface-dark);color:var(--paper);padding:12vh 28px}.proof-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.proof h2{font-size:clamp(54px,7vw,104px);font-weight:400;line-height:.96;margin:0}.proof .copy{font-size:20px;line-height:1.65;max-width:38ch;color:var(--copy-on-dark);}.list{margin-top:40px;border-top:1px solid var(--rule-on-dark)}.item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule-on-dark)}
 .invitation{padding:14vh 28px;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}.invitation h2{font-size:clamp(58px,8vw,118px);font-weight:400;line-height:.94;margin:0}.invitation p{font-size:18px;line-height:1.65;max-width:34ch;}
 footer{border-top:1px solid var(--rule);padding:24px 28px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font:600 10px/1.5 var(--font-text);text-transform:uppercase;}
-#portrait,#system,#trial{scroll-margin-top:64px}
+#portrait,#system,#plans,#trial{scroll-margin-top:64px}
 .modal{max-width:520px;width:calc(100% - 32px);max-height:calc(100dvh - 32px);background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:0}.modal::backdrop{background:rgba(20,19,17,.72)}.dialog{padding:32px}html.modal-open,html.modal-open body{overflow:hidden}.dialog h2{font-size:42px;font-weight:400;margin:12px 0}.dialog p{line-height:1.6;}.close{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
 @media(min-width:761px) and (max-width:1024px){.chapter{grid-template-columns:minmax(0,1fr);gap:24px;padding:10vh 28px}.chapter .annotation{grid-column:1;max-width:56ch}.chapter h2{max-width:12ch}.chapter p{max-width:42ch}.proof-inner{gap:5vw}}
 @media(max-width:760px){.study-section{padding:80px 16px var(--section-seam)}.study-header{margin-bottom:28px}.study-header h2{font-size:40px;line-height:44px}.study-grid{grid-template-columns:1fr;gap:24px}.study-card{aspect-ratio:4/5}.study-card-copy{top:24px;left:24px;right:24px}.study-card-copy h3{font-size:28px;line-height:32px}.mast h1{width:100%;max-width:100%}.top{height:64px;padding:0 16px}.menu{display:none}.mast{grid-template-columns:1fr;padding:90px 16px 70px}.mast h1{font-size:clamp(52px,15vw,64px);line-height:.96;margin-bottom:24px}.mast .dek{max-width:30ch;line-height:1.58}.mast .aside{line-height:1.65}.cover{margin:0 16px;min-height:58svh}.chapter{grid-template-columns:minmax(0,1fr);padding:88px 16px;gap:18px}.chapter.chapter--continuation{padding-top:var(--section-seam)}.chapter>*,.chapter h2,.chapter p,.annotation{min-width:0;overflow-wrap:anywhere}.chapter .annotation{grid-column:1}.chapter p{max-width:34ch}.annotation-body{font-size:15px!important;line-height:1.62!important}.proof{padding:90px 16px}.proof-inner{grid-template-columns:1fr;gap:46px}.invitation{grid-template-columns:1fr;padding:96px 16px}footer{padding:20px 16px 36px;grid-template-columns:1fr}}
-@media(orientation:landscape) and (max-height:520px){#portrait,#system,#trial{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img,.cover video{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.proof{padding:64px 16px}.invitation{padding:64px 16px}footer{padding:20px 16px 28px}}
+@media(orientation:landscape) and (max-height:520px){#portrait,#system,#plans,#trial{scroll-margin-top:56px}.top{height:56px;padding:0 16px}.mast{padding:48px 16px 44px}.cover{margin:0 16px;min-height:0;overflow:visible;display:flex;justify-content:center;align-items:center;padding:24px 0 32px;background:transparent}.cover img,.cover video{position:static;display:block;width:auto;height:min(84svh,420px);max-width:100%;object-fit:contain}.chapter{padding-top:56px;padding-bottom:56px}.proof{padding:64px 16px}.invitation{padding:64px 16px}footer{padding:20px 16px 28px}}
 @media(orientation:landscape) and (max-height:520px) and (min-width:640px) and (max-width:760px){.mast{grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:28px}.mast h1{font-size:clamp(48px,7.5vw,58px)}.mast .dek{font-size:17px;line-height:1.42}.chapter{grid-template-columns:minmax(0,1fr) minmax(180px,.72fr);gap:18px}.chapter .annotation{grid-column:auto}.chapter h2{font-size:clamp(42px,7vw,56px)}.chapter p{font-size:17px}.proof-inner{grid-template-columns:1fr 1fr;gap:5vw}.invitation{grid-template-columns:1fr auto;gap:32px}footer{grid-template-columns:1fr 1fr}}
 
 /* TYPOGRAPHY_TRACKING_START */
@@ -63,6 +63,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .workflow{display:block}.workflow-intro{max-width:760px}.workflow-intro p{max-width:48ch}.workflow h3{margin:0 0 20px;font:600 clamp(24px,3vw,36px)/1.2 var(--font-display);letter-spacing:var(--track-display)}.workflow-nodes{margin-top:48px}.workflow-nodes svg{display:block;width:100%;height:auto;background:#242424}.workflow-nodes>p,.workflow-note{font:400 14px/1.6 var(--font-text)!important;color:var(--muted);max-width:65ch!important}.workflow-look{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:56px}.workflow-look p{margin-top:0;max-width:38ch}.workflow-panel{margin:0}.workflow-panel svg{display:block;width:100%;height:auto;background:#242424}.look-controls{margin:32px 0}.look-controls>div{padding:16px 0;border-top:1px solid var(--rule)}.look-controls dt{display:flex;justify-content:space-between;gap:16px;font:600 18px/1.4 var(--font-text)}.look-controls dt span{font-variant-numeric:tabular-nums}.look-controls dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy);max-width:40ch}
 @media(max-width:760px){.workflow h3{font-size:24px}.workflow-nodes{margin-top:32px}.workflow-nodes h3{font-size:22px;max-width:24ch}.workflow-look{grid-template-columns:minmax(0,1fr);gap:32px;margin-top:40px}.workflow-panel{grid-row:1}.look-controls{margin-top:24px}.workflow-nodes svg{min-height:70px}.workflow-intro h2{font-size:clamp(40px,9vw,56px)}}
 .study-example{min-width:0}.study-caption{margin:16px 0 0;font:400 15px/1.6 var(--font-text);color:var(--muted);max-width:52ch}.study-example .study-card img{object-position:50% 50%}.study-caption span{white-space:nowrap}
+.plans{padding:var(--study-section-pad) 28px;border-top:1px solid var(--rule)}.plans-inner{max-width:var(--max);margin:auto}.plans h2{font-size:clamp(40px,5vw,72px);font-weight:400;line-height:1.02;margin:0 0 clamp(32px,4vw,56px);letter-spacing:var(--track-display)}.plan-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--media-gap);margin:0;border-top:1px solid var(--rule)}.plan-list>div{padding:24px 0;border-bottom:1px solid var(--rule)}.plan-list dt{font:600 18px/1.4 var(--font-text);letter-spacing:var(--track-label)}.plan-list dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy)}.plan-list .price{font:600 clamp(28px,3vw,40px)/1.15 var(--font-display);color:var(--ink);letter-spacing:var(--track-display);font-variant-numeric:tabular-nums}.plans-note{margin:24px 0 0;font:400 14px/1.6 var(--font-text);color:var(--muted);max-width:65ch}@media(max-width:760px){.plans{padding:64px 16px}.plan-list{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -78,7 +79,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
     <h1><span class="display-line">Grade less.</span><span class="display-line">Create more.</span></h1>
     <p class="dek">Make room for skin, foliage and sky in your color-grading workflow.</p>
   </div>
-  <aside class="aside">A concept preview of EasyGrade, a modular color-grading OFX toolkit for DaVinci Resolve. Pricing, trial terms and platform availability are not announced here.</aside>
+  <aside class="aside">A concept preview of EasyGrade, a modular color-grading OFX toolkit for DaVinci Resolve. Plans are listed below. Platform availability is not announced here.</aside>
 </section>
 
 <figure class="cover hero-video">
@@ -147,6 +148,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   </div>
 </section>
 
+<section class="plans" id="plans" aria-labelledby="plans-title">
+  <div class="plans-inner">
+    <h2 id="plans-title">Try for 7 days.<br>Then choose a plan.</h2>
+    <dl class="plan-list">
+      <div><dt>Trial</dt><dd class="price">7 days</dd><dd>Try EasyGrade before you choose a plan.</dd></div>
+      <div><dt>Normal</dt><dd class="price">399 THB / $12</dd><dd>30 days per purchase.</dd></div>
+      <div><dt>Pro</dt><dd class="price">1,099 THB / $33</dd><dd>30 days per purchase.</dd></div>
+    </dl>
+    <p class="plans-note">Prices shown in Thai baht (THB) and US dollars (USD). This concept preview creates no account, starts no trial and takes no payment.</p>
+  </div>
+</section>
+
 <section class="invitation" id="trial">
   <div><h2>Less grading.<br>More creating.</h2><p>Explore the trial preview. This interaction creates no account, starts no trial and takes no payment.</p><button class="trial" type="button" data-trial>Preview trial</button></div>
 </section>
@@ -154,7 +167,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 <footer><span>EasyGrade · Concept preview</span><span>Images supplied by the EasyGrade creator.</span></footer>
 
 <dialog class="modal" id="modal" aria-labelledby="trial-title" aria-describedby="trial-description">
-  <div class="dialog"><h2 id="trial-title">Preview the flow.</h2><p id="trial-description">This concept preview creates no account, starts no trial and takes no payment. Commercial terms are not announced here.</p><button class="close" type="button" data-close autofocus>Close preview</button></div>
+  <div class="dialog"><h2 id="trial-title">Preview the flow.</h2><p id="trial-description">This concept preview creates no account, starts no trial and takes no payment. Plans are listed on this page.</p><button class="close" type="button" data-close autofocus>Close preview</button></div>
 </dialog>
 <script>
 const modal=document.getElementById('modal');

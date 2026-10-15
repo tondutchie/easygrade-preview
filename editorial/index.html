@@ -63,7 +63,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .workflow{display:block}.workflow-intro{max-width:760px}.workflow-intro p{max-width:48ch}.workflow h3{margin:0 0 20px;font:600 clamp(24px,3vw,36px)/1.2 var(--font-display);letter-spacing:var(--track-display)}.workflow-nodes{margin-top:48px}.workflow-nodes svg{display:block;width:100%;height:auto;background:#242424}.workflow-nodes>p,.workflow-note{font:400 14px/1.6 var(--font-text)!important;color:var(--muted);max-width:65ch!important}.workflow-look{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:56px}.workflow-look p{margin-top:0;max-width:38ch}.workflow-panel{margin:0}.workflow-panel svg{display:block;width:100%;height:auto;background:#242424}.look-controls{margin:32px 0}.look-controls>div{padding:16px 0;border-top:1px solid var(--rule)}.look-controls dt{display:flex;justify-content:space-between;gap:16px;font:600 18px/1.4 var(--font-text)}.look-controls dt span{font-variant-numeric:tabular-nums}.look-controls dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy);max-width:40ch}
 @media(max-width:760px){.workflow h3{font-size:24px}.workflow-nodes{margin-top:32px}.workflow-nodes h3{font-size:22px;max-width:24ch}.workflow-look{grid-template-columns:minmax(0,1fr);gap:32px;margin-top:40px}.workflow-panel{grid-row:1}.look-controls{margin-top:24px}.workflow-nodes svg{min-height:70px}.workflow-intro h2{font-size:clamp(40px,9vw,56px)}}
 .study-example{min-width:0}.study-caption{margin:16px 0 0;font:400 15px/1.6 var(--font-text);color:var(--muted);max-width:52ch}.study-example .study-card img{object-position:50% 50%}.study-caption span{white-space:nowrap}
-.plans{padding:var(--study-section-pad) 28px;border-top:1px solid var(--rule)}.plans-inner{max-width:var(--max);margin:auto}.plans h2{font-size:clamp(40px,5vw,72px);font-weight:400;line-height:1.02;margin:0 0 clamp(32px,4vw,56px);letter-spacing:var(--track-display)}.plan-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--media-gap);margin:0;border-top:1px solid var(--rule)}.plan-list>div{padding:24px 0;border-bottom:1px solid var(--rule)}.plan-list dt{font:600 18px/1.4 var(--font-text);letter-spacing:var(--track-label)}.plan-list dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy)}.plan-list .price{font:600 clamp(28px,3vw,40px)/1.15 var(--font-display);color:var(--ink);letter-spacing:var(--track-display);font-variant-numeric:tabular-nums}.plans-note{margin:24px 0 0;font:400 14px/1.6 var(--font-text);color:var(--muted);max-width:65ch}@media(max-width:760px){.plans{padding:64px 16px}.plan-list{grid-template-columns:minmax(0,1fr)}}
+.plans{padding:var(--study-section-pad) 28px;border-top:1px solid var(--rule)}.plans-inner{max-width:var(--max);margin:auto}.plans h2{font-size:clamp(40px,5vw,72px);font-weight:400;line-height:1.02;margin:0 0 clamp(32px,4vw,56px);letter-spacing:var(--track-display)}.plan-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--media-gap);margin:0;border-top:1px solid var(--rule)}.plan-list>div{padding:24px 0;border-bottom:1px solid var(--rule)}.plan-list dt{font:600 18px/1.4 var(--font-text);letter-spacing:var(--track-label)}.plan-list dd{margin:8px 0 0;font:400 16px/1.6 var(--font-text);color:var(--copy)}.plan-list .price{font:600 clamp(24px,3vw,40px)/1.15 var(--font-display);color:var(--ink);letter-spacing:var(--track-display);font-variant-numeric:tabular-nums}.plan-list .price span{white-space:nowrap}.plans-note{margin:24px 0 0;font:400 14px/1.6 var(--font-text);color:var(--muted);max-width:65ch}@media(max-width:760px){.plans{padding:64px 16px}.plan-list{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -79,7 +79,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
     <h1><span class="display-line">Grade less.</span><span class="display-line">Create more.</span></h1>
     <p class="dek">Make room for skin, foliage and sky in your color-grading workflow.</p>
   </div>
-  <aside class="aside">A concept preview of EasyGrade, a modular color-grading OFX toolkit for DaVinci Resolve. Plans are listed below. Platform availability is not announced here.</aside>
+  <aside class="aside">A concept preview of EasyGrade, a modular color-grading OFX toolkit for DaVinci Resolve. Plans are listed below. Platform availability is not announced yet.</aside>
 </section>
 
 <figure class="cover hero-video">
@@ -153,10 +153,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
     <h2 id="plans-title">Try for 7 days.<br>Then choose a plan.</h2>
     <dl class="plan-list">
       <div><dt>Trial</dt><dd class="price">7 days</dd><dd>Normal features, starting at first activation.</dd></div>
-      <div><dt>Normal</dt><dd class="price">399 THB / $12</dd><dd>30 days per purchase.</dd></div>
-      <div><dt>Pro</dt><dd class="price">1,099 THB / $33</dd><dd>30 days per purchase.</dd></div>
+      <div><dt>Normal</dt><dd class="price"><span>399 THB /</span> <span>$12</span></dd><dd>30 days per purchase.</dd></div>
+      <div><dt>Pro</dt><dd class="price"><span>1,099 THB /</span> <span>$33</span></dd><dd>30 days per purchase.</dd></div>
     </dl>
-    <p class="plans-note">Prices shown in Thai baht (THB) and US dollars (USD). This concept preview creates no account, starts no trial and takes no payment.</p>
+    <p class="plans-note">Prices shown in Thai baht (THB) and US dollars (USD). Purchasing is not open yet. This concept preview creates no account, starts no trial and takes no payment.</p>
   </div>
 </section>
 

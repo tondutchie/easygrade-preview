@@ -9,7 +9,7 @@
 :root{--paper:#eee7da;--ink:#171713;--muted:#675f55;--rule:#2b2a26;--accent:#9a2f24;--max:1180px;--track-display:-.015em;--track-copy:-.01em;--track-label:-.02em;--track-ui:-.01em;--media-gap:clamp(24px,2.2vw,32px);--study-radius:28px;--study-pad:32px;--study-card-ratio:3/4;--study-section-pad:clamp(80px,8vw,112px);--section-seam:clamp(28px,3vw,48px);--surface-dark:rgb(26 26 23);--copy:rgb(60 57 50);--rule-on-dark:rgb(113 110 102);--copy-on-dark:rgb(210 204 191);--muted-on-dark:rgb(170 165 154);--media-placeholder:rgb(216 212 204);--font-display:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;--font-text:"SF Pro Text",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-text)}a{color:inherit}button{font:inherit}
 .top{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;gap:20px;padding:0 24px;border-bottom:1px solid var(--rule);background:rgba(238,231,218,.93);backdrop-filter:blur(8px)}
-.logo{font:700 20px/1 var(--font-text);}.top>div:first-child{display:flex;align-items:center}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 var(--font-text);text-decoration:none;}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);}
+.logo{font:700 20px/1 var(--font-text);}.top>div:first-child{display:flex;align-items:center}.menu{display:flex;gap:18px}.menu a{font:600 12px/1 var(--font-text);text-decoration:none;}.trial{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font:700 12px/1 var(--font-text);display:inline-flex;align-items:center;text-decoration:none}
 .mast{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;max-width:var(--max);margin:auto;padding:12vh 28px 10vh}
 .mast h1{font-size:clamp(64px,9vw,132px);line-height:.9;font-weight:400;margin:0 0 28px;max-width:none;width:max-content}.mast .dek{font-size:clamp(19px,2vw,27px);line-height:1.55;max-width:32ch;}.mast .aside{align-self:end;border-top:1px solid var(--rule);padding-top:20px;font-size:14px;line-height:1.65;max-width:48ch;color:var(--muted);}
 .cover{position:relative;min-height:72svh;overflow:hidden;margin:0 28px;border-bottom:1px solid var(--rule)}.cover img,.cover video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.9) contrast(1.03)}
@@ -102,7 +102,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="header-cluster"><a class="logo" href="#top">EasyGrade</a><nav class="menu" aria-label="Main navigation"><a href="#portrait">Portrait</a><a href="#system">System</a><a href="#plans">Plans</a></nav><button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">Menu</button></div>
-  <button class="trial" type="button" data-trial>See how to try</button>
+  <a class="trial" href="#plans">View plans</a>
 </header>
 <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="#portrait">Portrait</a><a href="#system">System</a><a href="#plans">Plans</a></nav>
 <main id="main">
@@ -205,28 +205,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 </section>
 
 <section class="invitation" id="trial">
-  <div><h2>Less grading.<br>More creating.</h2><p>This concept preview creates no account and takes no payment.</p><button class="trial" type="button" data-trial>See how to try</button></div>
+  <div><h2>Less grading.<br>More creating.</h2><p>This concept preview creates no account and takes no payment.</p><a class="trial" href="#plans">View plans</a></div>
 </section>
 </main>
 <footer><span>EasyGrade · Concept preview</span><span>Images supplied by the EasyGrade creator.</span></footer>
 
-<dialog class="modal" id="modal" aria-labelledby="trial-title" aria-describedby="trial-description">
-  <div class="dialog" tabindex="-1" autofocus><h2 id="trial-title">How to try.</h2><p id="trial-description">Without a license, every EasyGrade tool can be tried, and the picture shows an EasyGrade watermark. Plans are listed on this page. Purchasing is not open yet. This concept preview creates no account and takes no payment.</p><button class="close" type="button" data-close>Close preview</button></div>
-</dialog>
 <script>
-const modal=document.getElementById('modal');
 const toggle=document.querySelector('.menu-toggle'),mobileMenu=document.getElementById('mobile-menu');
-let trialOpener=null;
 function setMenu(open){mobileMenu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));}
 toggle.addEventListener('click',()=>{setMenu(mobileMenu.hidden);if(!mobileMenu.hidden)mobileMenu.querySelector('a').focus();});
 mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('pointerdown',e=>{if(!mobileMenu.hidden&&!mobileMenu.contains(e.target)&&!toggle.contains(e.target))setMenu(false);});
 matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)setMenu(false);});
-document.querySelectorAll('[data-trial]').forEach(button=>button.addEventListener('click',()=>{trialOpener=button;setMenu(false);document.documentElement.classList.add('modal-open');modal.showModal();}));
-document.querySelector('[data-close]').addEventListener('click',()=>modal.close());
-modal.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const items=[...modal.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),[tabindex="0"]')];const first=items[0],last=items.at(-1);if(!first){e.preventDefault();return;}if((e.shiftKey&&document.activeElement===first)||(!e.shiftKey&&document.activeElement===last)){e.preventDefault();(e.shiftKey?last:first).focus();}});
-modal.addEventListener('close',()=>{document.documentElement.classList.remove('modal-open');trialOpener?.focus();});
-modal.addEventListener('click',e=>{const r=modal.getBoundingClientRect();if(e.target===modal&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))modal.close();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!mobileMenu.hidden){setMenu(false);toggle.focus();}});
 
 const heroVideo=document.querySelector('#hero-video');
